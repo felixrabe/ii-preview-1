@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Layout Test</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* Grid Layout */
+
+    .layout-grid .container {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 1fr 40px;
+      grid-template-rows: 1fr 40px;
+    }
+
+    .layout-grid .container * {
+    }
+
+
+    /* Flex Layout */
+
+    .layout.flex .container {
+      display: flex;
+    }
+
+    .layout-flex .container * {
+    }
+
+
+    /* Presentation */
+
+    .container {
+      border: 4px solid #b8b8b8;
+      background-color: #e0e0e0;
+      height: 300px;
+    }
+
+    .container * {
+      background-color: #f4f4f4;
+    }
+  </style>
+</head>
+<body class="layout-flex">
+  <h1>Layout Test</h1>
+
+  <div class="container">
+    <div class="input">Input Area</div>
+    <div class="cmd-sm">Sm1</div>
+    <div class="cmd-sm">Sm2</div>
+    <div class="cmd-lg">Large 1</div>
+    <div class="cmd-sm">Sm3</div>
+    <div class="cmd-lg">Large 2</div>
+    <div class="cmd-sm">Sm4</div>
+  </div>
+</body>
+</html>
