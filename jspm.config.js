@@ -82,6 +82,7 @@ SystemJS.config({
     "domain": "npm:jspm-nodelibs-domain@0.2.1",
     "draft-js": "npm:draft-js@0.10.1",
     "events": "npm:jspm-nodelibs-events@0.2.2",
+    "font-awesome": "npm:font-awesome@4.7.0",
     "fs": "npm:jspm-nodelibs-fs@0.2.1",
     "http": "npm:jspm-nodelibs-http@0.2.0",
     "https": "npm:jspm-nodelibs-https@0.2.2",
@@ -453,6 +454,11 @@ SystemJS.config({
         "immutable": "npm:immutable@3.7.6",
         "object-assign": "npm:object-assign@4.1.1",
         "fbjs": "npm:fbjs@0.8.14"
+      }
+    },
+    "npm:font-awesome@4.7.0": {
+      "map": {
+        "css": "github:systemjs/plugin-css@0.1.35"
       }
     }
   }
