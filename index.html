@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>instadev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="jspm_packages/system.js"></script>
+  <script src="jspm.config.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    console.log('loading...')
+    SystemJS.import('instadev').then(instadev => {
+      instadev._run()
+      console.log('ready')
+      Object.keys(instadev).map(k => {window[k] = instadev[k]})
+    })
+  </script>
+</body>
+</html>

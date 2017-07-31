@@ -1,0 +1,13 @@
+/* Layout */
+
+.ui-root {
+  display: grid;
+  grid-template-rows: min-content auto;
+}
+
+
+/* Presentation */
+
+.ui-root {
+  height: 100%;
+}

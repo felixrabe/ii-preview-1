@@ -1,0 +1,12 @@
+/* Layout */
+
+.ui-text-input-base {
+}
+
+
+/* Presentation */
+
+.ui-text-input-base {
+  cursor: auto;
+  min-width: 3px;
+}

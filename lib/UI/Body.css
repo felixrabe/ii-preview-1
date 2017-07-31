@@ -1,0 +1,14 @@
+/* Layout */
+
+.ui-body {
+  display: grid;
+  grid-auto-rows: min-content;
+  overflow: auto;
+}
+
+
+/* Presentation */
+
+.ui-body {
+  padding: 6px;
+}

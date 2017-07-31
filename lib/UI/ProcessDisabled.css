@@ -1,0 +1,12 @@
+/* Layout */
+
+.ui-disabled {
+}
+
+
+/* Presentation */
+
+.ui-disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}

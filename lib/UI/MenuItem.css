@@ -1,0 +1,20 @@
+/* Layout */
+
+.ui-menu-item {
+  display: inline-block;
+}
+
+.ui-menu-item:hover {
+}
+
+
+/* Presentation */
+
+.ui-menu-item {
+  cursor: default;
+  user-select: none;
+}
+
+.ui-menu-item:hover {
+  background-color: #def;
+}

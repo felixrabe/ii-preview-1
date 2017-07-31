@@ -1,0 +1,21 @@
+/* Layout */
+
+.ui-widget {
+  display: grid;
+}
+
+.ui-widget:hover {
+}
+
+
+/* Presentation */
+
+.ui-widget {
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+}
+
+.ui-widget:hover {
+  background-color: #def;
+}

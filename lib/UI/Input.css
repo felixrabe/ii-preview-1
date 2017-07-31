@@ -1,0 +1,12 @@
+/* Layout */
+
+.ui-input {
+  display: inline-block;
+}
+
+
+/* Presentation */
+
+.ui-input {
+  cursor: auto;
+}

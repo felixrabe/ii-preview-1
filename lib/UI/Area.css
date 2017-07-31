@@ -1,0 +1,21 @@
+/* Layout */
+
+.ui-area {
+}
+
+.ui-area:hover {
+}
+
+
+/* Presentation */
+
+.ui-area {
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 6px;
+  padding: 6px;
+}
+
+.ui-area:hover {
+}
