@@ -1,6 +1,7 @@
 /* Layout */
 
 .ui-menu {
+  display: flex;
 }
 
 

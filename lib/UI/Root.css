@@ -1,13 +1,11 @@
 /* Layout */
 
 .ui-root {
-  display: grid;
-  grid-template-rows: min-content auto;
+  height: 100%;
 }
 
 
 /* Presentation */
 
 .ui-root {
-  height: 100%;
 }
