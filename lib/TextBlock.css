@@ -1,10 +1,11 @@
 /* Layout */
 
-.text-block {
+.text-block.ui-area {
 }
 
 
 /* Presentation */
 
-.text-block {
+.text-block.ui-area {
+  margin: 12px;
 }

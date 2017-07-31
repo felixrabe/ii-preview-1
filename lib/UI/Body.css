@@ -4,9 +4,12 @@
   overflow: auto;
 }
 
+.ui-body:empty {
+  display: none;
+}
+
 
 /* Presentation */
 
 .ui-body {
-  padding: 6px;
 }

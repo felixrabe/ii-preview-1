@@ -1,6 +1,7 @@
 /* Layout */
 
 .command-line {
+  flex: 0 0 auto;
 }
 
 .command-line-input {
