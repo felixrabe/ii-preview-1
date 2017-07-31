@@ -62,9 +62,9 @@ module.exports = {
     'max-statements': ['error'],
     'max-statements-per-line': ['error'],
     'new-parens': ['error'],
-    'newline-per-chained-call': ['error', {
-      'ignoreChainWithDepth': 3,
-    }],
+    // 'newline-per-chained-call': ['error', {
+    //   'ignoreChainWithDepth': 3,
+    // }],
     'no-console': ['off'],
     'no-extra-label': ['error'],
     'no-multi-spaces': ['error', {
