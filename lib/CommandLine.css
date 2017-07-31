@@ -4,6 +4,7 @@
 }
 
 .command-line-input {
+  flex-grow: 1;
 }
 
 
