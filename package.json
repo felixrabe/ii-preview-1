@@ -83,11 +83,16 @@
         }
       },
       "npm:font-awesome@4.7.0": {
-        "main": "css/font-awesome.css!",
+        "main": "css/font-awesome.css",
         "jspmNodeConversion": false,
         "registry": "jspm",
         "dependencies": {
           "css": "0.1"
+        },
+        "meta": {
+          "*.css": {
+            "loader": "css"
+          }
         }
       },
       "npm:inherits@2.0.3": {
