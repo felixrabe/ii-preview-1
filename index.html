@@ -14,7 +14,6 @@
     SystemJS.import('instadev').then(instadev => {
       instadev._run()
       console.log('ready')
-      Object.keys(instadev).map(k => {window[k] = instadev[k]})
     })
   </script>
 </body>
