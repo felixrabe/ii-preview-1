@@ -92,6 +92,8 @@ SystemJS.config({
     "process": "npm:jspm-nodelibs-process@0.2.1",
     "react": "npm:react@15.6.1",
     "react-dom": "npm:react-dom@15.6.1",
+    "react-grid-layout": "npm:react-grid-layout@0.14.7",
+    "react-resizable": "npm:react-resizable@1.7.1",
     "stream": "npm:jspm-nodelibs-stream@0.2.1",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.1",
     "url": "npm:jspm-nodelibs-url@0.2.1",
@@ -459,6 +461,26 @@ SystemJS.config({
     "npm:font-awesome@4.7.0": {
       "map": {
         "css": "github:systemjs/plugin-css@0.1.35"
+      }
+    },
+    "npm:react-grid-layout@0.14.7": {
+      "map": {
+        "lodash.isequal": "npm:lodash.isequal@4.5.0",
+        "react-draggable": "npm:react-draggable@2.2.6",
+        "react-resizable": "npm:react-resizable@1.7.1",
+        "classnames": "npm:classnames@2.2.5",
+        "prop-types": "npm:prop-types@15.5.10"
+      }
+    },
+    "npm:react-draggable@2.2.6": {
+      "map": {
+        "classnames": "npm:classnames@2.2.5"
+      }
+    },
+    "npm:react-resizable@1.7.1": {
+      "map": {
+        "prop-types": "npm:prop-types@15.5.10",
+        "react-draggable": "npm:react-draggable@2.2.6"
       }
     }
   }

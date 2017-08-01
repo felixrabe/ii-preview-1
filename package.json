@@ -42,7 +42,9 @@
       "css": "github:systemjs/plugin-css@^0.1.35",
       "draft-js": "npm:draft-js@^0.10.1",
       "font-awesome": "npm:font-awesome@^4.7.0",
-      "immutable": "npm:immutable@^3.8.1"
+      "immutable": "npm:immutable@^3.8.1",
+      "react-grid-layout": "npm:react-grid-layout@^0.14.7",
+      "react-resizable": "npm:react-resizable@^1.7.1"
     },
     "devDependencies": {
       "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@^6.24.1",
@@ -108,6 +110,35 @@
       },
       "npm:pbkdf2@3.0.12": {
         "main": "browser.js"
+      },
+      "npm:react-grid-layout@0.14.7": {
+        "format": "cjs",
+        "meta": {
+          "*": {
+            "globals": {
+              "process": "process"
+            }
+          },
+          "*.css": {
+            "loader": "css"
+          },
+          "*.json": {
+            "format": "json"
+          }
+        },
+        "map": {}
+      },
+      "npm:react-resizable@1.7.1": {
+        "format": "cjs",
+        "meta": {
+          "*.css": {
+            "loader": "css"
+          },
+          "*.json": {
+            "format": "json"
+          }
+        },
+        "map": {}
       },
       "npm:safe-buffer@5.1.1": {
         "browser": "index.js"
