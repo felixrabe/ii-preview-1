@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Grid Test</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    .grid {
+      background-color: #c66;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 1fr;
+      grid-template-areas:
+        "header header header"
+        "main main main"
+        "footer footer footer"
+      ;
+      height: 250px;
+      width: 250px;
+    }
+
+    .item {
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 5px solid black;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="item" style="grid-area: header-start/header-start/footer-end/footer-end"></div>
+    <div class="item" style="grid-area: footer"></div>
+  </div>
+</body>
+</html>
