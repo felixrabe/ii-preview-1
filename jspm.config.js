@@ -56,6 +56,7 @@ SystemJS.config({
         "*.js": {
           "loader": "plugin-babel",
           "babelOptions": {
+            "es2015": false,
             "plugins": [
               "babel-plugin-transform-react-jsx"
             ]
