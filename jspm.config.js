@@ -28,12 +28,6 @@ SystemJS.config({
           "esutils": "npm:esutils@2.0.2"
         }
       },
-      "npm:babel-runtime@6.25.0": {
-        "map": {
-          "core-js": "npm:core-js@2.4.1",
-          "regenerator-runtime": "npm:regenerator-runtime@0.10.5"
-        }
-      },
       "npm:babel-types@6.25.0": {
         "map": {
           "babel-runtime": "npm:babel-runtime@6.25.0",
@@ -75,6 +69,9 @@ SystemJS.config({
   ],
   map: {
     "assert": "npm:jspm-nodelibs-assert@0.2.1",
+    "babel-plugin-transform-runtime": "npm:babel-plugin-transform-runtime@6.23.0",
+    "babel-runtime": "npm:babel-runtime@6.25.0",
+    "babel-standalone": "npm:babel-standalone@6.25.0",
     "buffer": "npm:jspm-nodelibs-buffer@0.2.3",
     "child_process": "npm:jspm-nodelibs-child_process@0.2.1",
     "constants": "npm:jspm-nodelibs-constants@0.2.1",
@@ -482,6 +479,17 @@ SystemJS.config({
       "map": {
         "prop-types": "npm:prop-types@15.5.10",
         "react-draggable": "npm:react-draggable@2.2.6"
+      }
+    },
+    "npm:babel-runtime@6.25.0": {
+      "map": {
+        "core-js": "npm:core-js@2.4.1",
+        "regenerator-runtime": "npm:regenerator-runtime@0.10.5"
+      }
+    },
+    "npm:babel-plugin-transform-runtime@6.23.0": {
+      "map": {
+        "babel-runtime": "npm:babel-runtime@6.25.0"
       }
     }
   }
