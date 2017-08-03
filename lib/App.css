@@ -1,3 +1,7 @@
+.animate-none .react-grid-item {
+  transition: none;
+}
+
 .thing-frame {
   border-radius: 5px;
   display: grid;
