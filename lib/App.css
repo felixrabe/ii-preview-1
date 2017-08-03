@@ -7,6 +7,7 @@
 
 .thing-frame.react-grid-item > .react-resizable-handle {
   background: none;
+  cursor: nwse-resize;
 }
 
 .thing-header {
