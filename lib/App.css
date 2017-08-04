@@ -2,19 +2,19 @@
   transition: none;
 }
 
-.thing-frame {
+.obj-frame {
   border-radius: 5px;
   display: grid;
   grid-template-rows: min-content 1fr;
   overflow: hidden;
 }
 
-.thing-frame.react-grid-item > .react-resizable-handle {
+.obj-frame.react-grid-item > .react-resizable-handle {
   background: none;
   cursor: nwse-resize;
 }
 
-.thing-header {
+.obj-header {
   cursor: default;
   font-size: 0.8em;
   font-weight: bold;
@@ -23,6 +23,6 @@
   white-space: pre;
 }
 
-.thing-command {
+.obj-command {
   cursor: pointer;
 }
