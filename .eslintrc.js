@@ -58,7 +58,7 @@ module.exports = {
     'max-len': ['error', {
       'ignoreComments': false,
     }],
-    'max-lines': ['error'],
+    'max-lines': ['error', 180],
     'max-statements': ['error'],
     'max-statements-per-line': ['error'],
     'new-parens': ['error'],
