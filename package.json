@@ -46,6 +46,7 @@
       "draft-js": "npm:draft-js@^0.10.1",
       "font-awesome": "npm:font-awesome@^4.7.0",
       "immutable": "npm:immutable@^3.8.1",
+      "prop-types": "npm:prop-types@^15.5.10",
       "react-grid-layout": "npm:react-grid-layout@^0.14.7",
       "react-resizable": "npm:react-resizable@^1.7.1"
     },
@@ -111,7 +112,7 @@
           "process": "@empty"
         }
       },
-      "npm:pbkdf2@3.0.12": {
+      "npm:pbkdf2@3.0.13": {
         "main": "browser.js"
       },
       "npm:react-grid-layout@0.14.7": {

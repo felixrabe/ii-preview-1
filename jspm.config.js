@@ -88,6 +88,7 @@ SystemJS.config({
     "os": "npm:jspm-nodelibs-os@0.2.2",
     "path": "npm:jspm-nodelibs-path@0.2.3",
     "process": "npm:jspm-nodelibs-process@0.2.1",
+    "prop-types": "npm:prop-types@15.5.10",
     "react": "npm:react@15.6.1",
     "react-dom": "npm:react-dom@15.6.1",
     "react-grid-layout": "npm:react-grid-layout@0.14.7",
@@ -202,7 +203,7 @@ SystemJS.config({
     },
     "npm:jspm-nodelibs-buffer@0.2.3": {
       "map": {
-        "buffer": "npm:buffer@5.0.6"
+        "buffer": "npm:buffer@5.0.7"
       }
     },
     "npm:string_decoder@1.0.3": {
@@ -241,12 +242,6 @@ SystemJS.config({
         "querystring": "npm:querystring@0.2.0"
       }
     },
-    "npm:buffer@5.0.6": {
-      "map": {
-        "base64-js": "npm:base64-js@1.2.1",
-        "ieee754": "npm:ieee754@1.1.8"
-      }
-    },
     "npm:jspm-nodelibs-string_decoder@0.2.1": {
       "map": {
         "string_decoder": "npm:string_decoder@0.10.31"
@@ -269,7 +264,7 @@ SystemJS.config({
         "browserify-cipher": "npm:browserify-cipher@1.0.0",
         "create-hmac": "npm:create-hmac@1.1.6",
         "public-encrypt": "npm:public-encrypt@4.0.0",
-        "pbkdf2": "npm:pbkdf2@3.0.12",
+        "pbkdf2": "npm:pbkdf2@3.0.13",
         "diffie-hellman": "npm:diffie-hellman@5.0.2",
         "create-ecdh": "npm:create-ecdh@4.0.0",
         "create-hash": "npm:create-hash@1.1.3",
@@ -311,15 +306,6 @@ SystemJS.config({
         "randombytes": "npm:randombytes@2.0.5",
         "bn.js": "npm:bn.js@4.11.7",
         "miller-rabin": "npm:miller-rabin@4.0.0"
-      }
-    },
-    "npm:pbkdf2@3.0.12": {
-      "map": {
-        "create-hmac": "npm:create-hmac@1.1.6",
-        "safe-buffer": "npm:safe-buffer@5.1.1",
-        "create-hash": "npm:create-hash@1.1.3",
-        "ripemd160": "npm:ripemd160@2.0.1",
-        "sha.js": "npm:sha.js@2.4.8"
       }
     },
     "npm:create-hash@1.1.3": {
@@ -368,7 +354,7 @@ SystemJS.config({
     "npm:parse-asn1@5.1.0": {
       "map": {
         "create-hash": "npm:create-hash@1.1.3",
-        "pbkdf2": "npm:pbkdf2@3.0.12",
+        "pbkdf2": "npm:pbkdf2@3.0.13",
         "browserify-aes": "npm:browserify-aes@1.0.6",
         "evp_bytestokey": "npm:evp_bytestokey@1.0.0",
         "asn1.js": "npm:asn1.js@4.9.1"
@@ -490,6 +476,21 @@ SystemJS.config({
     "npm:babel-plugin-transform-runtime@6.23.0": {
       "map": {
         "babel-runtime": "npm:babel-runtime@6.25.0"
+      }
+    },
+    "npm:buffer@5.0.7": {
+      "map": {
+        "ieee754": "npm:ieee754@1.1.8",
+        "base64-js": "npm:base64-js@1.2.1"
+      }
+    },
+    "npm:pbkdf2@3.0.13": {
+      "map": {
+        "safe-buffer": "npm:safe-buffer@5.1.1",
+        "create-hmac": "npm:create-hmac@1.1.6",
+        "ripemd160": "npm:ripemd160@2.0.1",
+        "sha.js": "npm:sha.js@2.4.8",
+        "create-hash": "npm:create-hash@1.1.3"
       }
     }
   }
