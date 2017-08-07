@@ -63,3 +63,9 @@ Pieces from my CommandHistory that might be useful:
     dir.set('red', React.cloneElement(<Red ref={r => dir.has('red') && dir.set('redRef_1', r)} />))
 
     let red; dir.set('red', React.cloneElement(red = <Red ref={r => dir.has('red') && dir.set('redRef_1', r)} />, { ref: r => { typeof red.ref === 'function' && red.ref(r); dir.has('red') && dir.set('redRef_2', r) } })) /* two refs - https://github.com/facebook/react/issues/8873#issuecomment-275423780 */ .
+
+    System.config({map: {d3: '/jspm_packages/npm/d3@4.10.0'}})
+
+    dir.import('d3', 'd3')
+
+    d3.select('svg').select('circle').transition().attr('fill', '#e33').attr('r', 20)
