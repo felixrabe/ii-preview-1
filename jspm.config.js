@@ -77,6 +77,7 @@ SystemJS.config({
     "constants": "npm:jspm-nodelibs-constants@0.2.1",
     "crypto": "npm:jspm-nodelibs-crypto@0.2.1",
     "css": "github:systemjs/plugin-css@0.1.35",
+    "d3": "npm:d3@4.10.0",
     "domain": "npm:jspm-nodelibs-domain@0.2.1",
     "draft-js": "npm:draft-js@0.10.1",
     "events": "npm:jspm-nodelibs-events@0.2.2",
@@ -491,6 +492,134 @@ SystemJS.config({
         "ripemd160": "npm:ripemd160@2.0.1",
         "sha.js": "npm:sha.js@2.4.8",
         "create-hash": "npm:create-hash@1.1.3"
+      }
+    },
+    "npm:d3@4.10.0": {
+      "map": {
+        "d3-chord": "npm:d3-chord@1.0.4",
+        "d3-collection": "npm:d3-collection@1.0.4",
+        "d3-brush": "npm:d3-brush@1.0.4",
+        "d3-dispatch": "npm:d3-dispatch@1.0.3",
+        "d3-drag": "npm:d3-drag@1.1.1",
+        "d3-force": "npm:d3-force@1.0.6",
+        "d3-interpolate": "npm:d3-interpolate@1.1.5",
+        "d3-array": "npm:d3-array@1.2.0",
+        "d3-path": "npm:d3-path@1.0.5",
+        "d3-random": "npm:d3-random@1.1.0",
+        "d3-request": "npm:d3-request@1.0.5",
+        "d3-geo": "npm:d3-geo@1.6.4",
+        "d3-selection": "npm:d3-selection@1.1.0",
+        "d3-time-format": "npm:d3-time-format@2.0.5",
+        "d3-timer": "npm:d3-timer@1.0.6",
+        "d3-voronoi": "npm:d3-voronoi@1.1.2",
+        "d3-zoom": "npm:d3-zoom@1.5.0",
+        "d3-quadtree": "npm:d3-quadtree@1.0.3",
+        "d3-scale": "npm:d3-scale@1.0.6",
+        "d3-shape": "npm:d3-shape@1.2.0",
+        "d3-polygon": "npm:d3-polygon@1.0.3",
+        "d3-axis": "npm:d3-axis@1.0.8",
+        "d3-hierarchy": "npm:d3-hierarchy@1.1.5",
+        "d3-dsv": "npm:d3-dsv@1.0.5",
+        "d3-color": "npm:d3-color@1.0.3",
+        "d3-time": "npm:d3-time@1.0.7",
+        "d3-ease": "npm:d3-ease@1.0.3",
+        "d3-queue": "npm:d3-queue@3.0.7",
+        "d3-format": "npm:d3-format@1.2.0",
+        "d3-transition": "npm:d3-transition@1.1.0"
+      }
+    },
+    "npm:d3-chord@1.0.4": {
+      "map": {
+        "d3-array": "npm:d3-array@1.2.0",
+        "d3-path": "npm:d3-path@1.0.5"
+      }
+    },
+    "npm:d3-brush@1.0.4": {
+      "map": {
+        "d3-dispatch": "npm:d3-dispatch@1.0.3",
+        "d3-drag": "npm:d3-drag@1.1.1",
+        "d3-interpolate": "npm:d3-interpolate@1.1.5",
+        "d3-selection": "npm:d3-selection@1.1.0",
+        "d3-transition": "npm:d3-transition@1.1.0"
+      }
+    },
+    "npm:d3-drag@1.1.1": {
+      "map": {
+        "d3-dispatch": "npm:d3-dispatch@1.0.3",
+        "d3-selection": "npm:d3-selection@1.1.0"
+      }
+    },
+    "npm:d3-force@1.0.6": {
+      "map": {
+        "d3-collection": "npm:d3-collection@1.0.4",
+        "d3-dispatch": "npm:d3-dispatch@1.0.3",
+        "d3-quadtree": "npm:d3-quadtree@1.0.3",
+        "d3-timer": "npm:d3-timer@1.0.6"
+      }
+    },
+    "npm:d3-geo@1.6.4": {
+      "map": {
+        "d3-array": "npm:d3-array@1.2.0"
+      }
+    },
+    "npm:d3-request@1.0.5": {
+      "map": {
+        "d3-collection": "npm:d3-collection@1.0.4",
+        "d3-dispatch": "npm:d3-dispatch@1.0.3",
+        "d3-dsv": "npm:d3-dsv@1.0.5",
+        "xmlhttprequest": "npm:xmlhttprequest@1.8.0"
+      }
+    },
+    "npm:d3-shape@1.2.0": {
+      "map": {
+        "d3-path": "npm:d3-path@1.0.5"
+      }
+    },
+    "npm:d3-scale@1.0.6": {
+      "map": {
+        "d3-array": "npm:d3-array@1.2.0",
+        "d3-collection": "npm:d3-collection@1.0.4",
+        "d3-interpolate": "npm:d3-interpolate@1.1.5",
+        "d3-time-format": "npm:d3-time-format@2.0.5",
+        "d3-color": "npm:d3-color@1.0.3",
+        "d3-format": "npm:d3-format@1.2.0",
+        "d3-time": "npm:d3-time@1.0.7"
+      }
+    },
+    "npm:d3-zoom@1.5.0": {
+      "map": {
+        "d3-dispatch": "npm:d3-dispatch@1.0.3",
+        "d3-drag": "npm:d3-drag@1.1.1",
+        "d3-interpolate": "npm:d3-interpolate@1.1.5",
+        "d3-selection": "npm:d3-selection@1.1.0",
+        "d3-transition": "npm:d3-transition@1.1.0"
+      }
+    },
+    "npm:d3-interpolate@1.1.5": {
+      "map": {
+        "d3-color": "npm:d3-color@1.0.3"
+      }
+    },
+    "npm:d3-time-format@2.0.5": {
+      "map": {
+        "d3-time": "npm:d3-time@1.0.7"
+      }
+    },
+    "npm:d3-transition@1.1.0": {
+      "map": {
+        "d3-color": "npm:d3-color@1.0.3",
+        "d3-dispatch": "npm:d3-dispatch@1.0.3",
+        "d3-ease": "npm:d3-ease@1.0.3",
+        "d3-interpolate": "npm:d3-interpolate@1.1.5",
+        "d3-selection": "npm:d3-selection@1.1.0",
+        "d3-timer": "npm:d3-timer@1.0.6"
+      }
+    },
+    "npm:d3-dsv@1.0.5": {
+      "map": {
+        "commander": "npm:commander@2.11.0",
+        "iconv-lite": "npm:iconv-lite@0.4.18",
+        "rw": "npm:rw@1.3.3"
       }
     }
   }
