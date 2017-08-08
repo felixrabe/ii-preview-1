@@ -69,3 +69,7 @@ Pieces from my CommandHistory that might be useful:
     dir.import('d3', 'd3')
 
     d3.select('svg').select('circle').transition().attr('fill', '#e33').attr('r', 20)
+
+    const S = await dir.import('lib/core/Serializer') ; console.log(S) ; console.log(S.fromJS(123)) .
+
+    const S = await dir.import('lib/core/Serializer') ; const v = S ; console.log('') ; console.log('v --', v) ; console.log('fromJS(v) --', await S.fromJS(v)) ; console.log('toJS(fromJS(v)) --', await S.toJS(await S.fromJS(v))) ; console.log('equal?', await S.toJS(await S.fromJS(v)) === v) .
