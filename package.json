@@ -48,6 +48,7 @@
       "font-awesome": "npm:font-awesome@^4.7.0",
       "immutable": "npm:immutable@^3.8.1",
       "prop-types": "npm:prop-types@^15.5.10",
+      "react-draggable": "npm:react-draggable@^2.2.6",
       "react-grid-layout": "npm:react-grid-layout@^0.14.7",
       "react-resizable": "npm:react-resizable@^1.7.1"
     },

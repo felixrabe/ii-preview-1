@@ -92,6 +92,7 @@ SystemJS.config({
     "prop-types": "npm:prop-types@15.5.10",
     "react": "npm:react@15.6.1",
     "react-dom": "npm:react-dom@15.6.1",
+    "react-draggable": "npm:react-draggable@2.2.6",
     "react-grid-layout": "npm:react-grid-layout@0.14.7",
     "react-resizable": "npm:react-resizable@1.7.1",
     "stream": "npm:jspm-nodelibs-stream@0.2.1",
