@@ -13,6 +13,7 @@
     console.log('loading...')
     SystemJS.import('instadev').then(instadev => {
       instadev._run()
+      window.$app = instadev.app
       console.log('ready')
     })
   </script>
