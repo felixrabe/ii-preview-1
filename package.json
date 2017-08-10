@@ -47,6 +47,7 @@
       "draft-js": "npm:draft-js@^0.10.1",
       "font-awesome": "npm:font-awesome@^4.7.0",
       "immutable": "npm:immutable@^3.8.1",
+      "lodash": "npm:lodash@^4.17.4",
       "prop-types": "npm:prop-types@^15.5.10",
       "react-draggable": "npm:react-draggable@^2.2.6",
       "react-grid-layout": "npm:react-grid-layout@^0.14.7",
