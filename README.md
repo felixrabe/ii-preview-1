@@ -1,3 +1,7 @@
+Sublime Text exclusion:
+
+    -jspm_packages/,-node_modules/
+
 Pieces from my CommandHistory that might be useful:
 
     = console.
