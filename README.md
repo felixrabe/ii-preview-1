@@ -77,3 +77,5 @@ Pieces from my CommandHistory that might be useful:
     const S = await scope.import('lib/core/Serializer') ; console.log(S) ; console.log(S.fromJS(123)) .
 
     const S = await scope.import('lib/core/Serializer') ; const v = S ; console.log('') ; console.log('v --', v) ; console.log('fromJS(v) --', await S.fromJS(v)) ; console.log('toJS(fromJS(v)) --', await S.toJS(await S.fromJS(v))) ; console.log('equal?', await S.toJS(await S.fromJS(v)) === v) .
+
+    set txt = <Text onChange={t => scope.getObjRef('txt2').childRef.setText(eval(scope.getObjRef('txt3').childRef.getText()))} /> .
