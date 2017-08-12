@@ -7,7 +7,8 @@
     "jspm": "jspm",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
-    "test": "jest"
+    "test": "jest",
+    "test-script": "jspm run ./lib/systemjs-test.js"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
