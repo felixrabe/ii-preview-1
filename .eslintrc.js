@@ -45,7 +45,7 @@ module.exports = {
     'comma-dangle': ['error', 'always-multiline'],
     'comma-spacing': ['error'],
     'complexity': ['error', 5],
-    'consistent-return': ['error'],
+    // 'consistent-return': ['error'],
     'curly': ['error'],
     'dot-location': ['error', 'property'],
     'eol-last': ['error'],
