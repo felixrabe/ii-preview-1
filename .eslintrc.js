@@ -12,6 +12,9 @@ module.exports = {
     'node': true,
   },
   'extends': 'eslint:recommended',
+  'globals': {
+    'SystemJS': false,
+  },
   'overrides': [
     {
       'env': {
