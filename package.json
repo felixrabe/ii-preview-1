@@ -17,7 +17,8 @@
     "eslint": "^4.3.0",
     "eslint-plugin-react": "^7.1.0",
     "jest": "^20.0.4",
-    "jspm": "beta"
+    "jspm": "beta",
+    "systemjs": "^0.20.17"
   },
   "jest": {
     "moduleNameMapper": {
