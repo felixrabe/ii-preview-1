@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>GridTest</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0px;
+      overflow: hidden;
+      padding: 0px;
+    }
+
+    .container {
+      background-color: #eee;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 100%;
+      height: 100%;
+      /*overflow: hidden;*/
+    }
+
+    .pane {
+      border: 12px solid #bbb;
+      display: grid;
+      height: 100%;
+    }
+
+    nav {
+      background-color: #d4d4d4;
+      padding: 0px 6px;
+    }
+
+    .scrollable {
+      /*height: 100%;*/
+      overflow: auto;
+      padding: 6px;
+    }
+
+    main {
+      align-self: start;
+      background-color: #ed8;
+      height: 1000px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="pane">
+      <nav>a b c</nav>
+      <div class="scrollable">
+        <main>Longer content ....</main>
+      </div>
+    </div>
+    <div class="pane">
+      <nav>a b c</nav>
+      <div class="scrollable">
+        <main>Longer content ....</main>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
