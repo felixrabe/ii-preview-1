@@ -2,7 +2,7 @@ SystemJS.config({
   paths: {
     "npm:": "jspm_packages/npm/",
     "github:": "jspm_packages/github/",
-    "instadev/": "lib/"
+    "ii/": "lib/"
   },
   browserConfig: {
     "baseURL": "/"
@@ -40,7 +40,7 @@ SystemJS.config({
   },
   transpiler: "plugin-babel",
   packages: {
-    "instadev": {
+    "ii": {
       "main": "index.js",
       "format": "esm",
       "meta": {

@@ -1,5 +1,5 @@
 {
-  "name": "instadev",
+  "name": "ii",
   "version": "0.0.0",
   "private": true,
   "license": "UNLICENSED",
@@ -38,7 +38,7 @@
     }
   },
   "jspm": {
-    "name": "instadev",
+    "name": "ii",
     "main": "index.js",
     "dependencies": {
       "babel-plugin-transform-runtime": "npm:babel-plugin-transform-runtime@^6.23.0",
