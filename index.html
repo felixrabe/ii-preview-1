@@ -13,7 +13,6 @@
     console.log('loading...')
     SystemJS.import('ii').then(ii => {
       ii._run()
-      window.$app = ii.app
       console.log('ready')
     })
   </script>
