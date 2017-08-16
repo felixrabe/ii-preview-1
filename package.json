@@ -55,6 +55,7 @@
       "prop-types": "npm:prop-types@^15.5.10",
       "react-draggable": "npm:react-draggable@^2.2.6",
       "react-grid-layout": "npm:react-grid-layout@^0.14.7",
+      "react-redux": "npm:react-redux@^5.0.6",
       "react-resizable": "npm:react-resizable@^1.7.1"
     },
     "devDependencies": {
@@ -78,6 +79,7 @@
       "process": "npm:jspm-nodelibs-process@^0.2.0",
       "react": "npm:react@^15.6.1",
       "react-dom": "npm:react-dom@^15.6.1",
+      "redux": "npm:redux@^3.0.0",
       "stream": "npm:jspm-nodelibs-stream@^0.2.0",
       "string_decoder": "npm:jspm-nodelibs-string_decoder@^0.2.0",
       "url": "npm:jspm-nodelibs-url@^0.2.0",

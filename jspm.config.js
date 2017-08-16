@@ -96,7 +96,9 @@ SystemJS.config({
     "react-dom": "npm:react-dom@15.6.1",
     "react-draggable": "npm:react-draggable@2.2.6",
     "react-grid-layout": "npm:react-grid-layout@0.14.7",
+    "react-redux": "npm:react-redux@5.0.6",
     "react-resizable": "npm:react-resizable@1.7.1",
+    "redux": "npm:redux@3.7.2",
     "stream": "npm:jspm-nodelibs-stream@0.2.1",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.1",
     "url": "npm:jspm-nodelibs-url@0.2.1",
@@ -163,7 +165,7 @@ SystemJS.config({
     },
     "npm:isomorphic-fetch@2.2.1": {
       "map": {
-        "node-fetch": "npm:node-fetch@1.7.1",
+        "node-fetch": "npm:node-fetch@1.7.2",
         "whatwg-fetch": "npm:whatwg-fetch@2.0.3"
       }
     },
@@ -171,12 +173,6 @@ SystemJS.config({
       "map": {
         "inherits": "npm:inherits@2.0.3",
         "readable-stream": "npm:readable-stream@2.3.3"
-      }
-    },
-    "npm:node-fetch@1.7.1": {
-      "map": {
-        "is-stream": "npm:is-stream@1.1.0",
-        "encoding": "npm:encoding@0.1.12"
       }
     },
     "npm:readable-stream@2.3.3": {
@@ -281,7 +277,7 @@ SystemJS.config({
         "create-hmac": "npm:create-hmac@1.1.6",
         "create-hash": "npm:create-hash@1.1.3",
         "browserify-rsa": "npm:browserify-rsa@4.0.1",
-        "bn.js": "npm:bn.js@4.11.7",
+        "bn.js": "npm:bn.js@4.11.8",
         "elliptic": "npm:elliptic@6.4.0",
         "parse-asn1": "npm:parse-asn1@5.1.0"
       }
@@ -301,14 +297,14 @@ SystemJS.config({
         "create-hash": "npm:create-hash@1.1.3",
         "randombytes": "npm:randombytes@2.0.5",
         "browserify-rsa": "npm:browserify-rsa@4.0.1",
-        "bn.js": "npm:bn.js@4.11.7",
+        "bn.js": "npm:bn.js@4.11.8",
         "parse-asn1": "npm:parse-asn1@5.1.0"
       }
     },
     "npm:diffie-hellman@5.0.2": {
       "map": {
         "randombytes": "npm:randombytes@2.0.5",
-        "bn.js": "npm:bn.js@4.11.7",
+        "bn.js": "npm:bn.js@4.11.8",
         "miller-rabin": "npm:miller-rabin@4.0.0"
       }
     },
@@ -322,7 +318,7 @@ SystemJS.config({
     },
     "npm:create-ecdh@4.0.0": {
       "map": {
-        "bn.js": "npm:bn.js@4.11.7",
+        "bn.js": "npm:bn.js@4.11.8",
         "elliptic": "npm:elliptic@6.4.0"
       }
     },
@@ -340,13 +336,13 @@ SystemJS.config({
     },
     "npm:browserify-rsa@4.0.1": {
       "map": {
-        "bn.js": "npm:bn.js@4.11.7",
+        "bn.js": "npm:bn.js@4.11.8",
         "randombytes": "npm:randombytes@2.0.5"
       }
     },
     "npm:elliptic@6.4.0": {
       "map": {
-        "bn.js": "npm:bn.js@4.11.7",
+        "bn.js": "npm:bn.js@4.11.8",
         "inherits": "npm:inherits@2.0.3",
         "brorand": "npm:brorand@1.1.0",
         "minimalistic-assert": "npm:minimalistic-assert@1.0.0",
@@ -404,7 +400,7 @@ SystemJS.config({
     },
     "npm:miller-rabin@4.0.0": {
       "map": {
-        "bn.js": "npm:bn.js@4.11.7",
+        "bn.js": "npm:bn.js@4.11.8",
         "brorand": "npm:brorand@1.1.0"
       }
     },
@@ -416,7 +412,7 @@ SystemJS.config({
     },
     "npm:asn1.js@4.9.1": {
       "map": {
-        "bn.js": "npm:bn.js@4.11.7",
+        "bn.js": "npm:bn.js@4.11.8",
         "inherits": "npm:inherits@2.0.3",
         "minimalistic-assert": "npm:minimalistic-assert@1.0.0"
       }
@@ -645,6 +641,35 @@ SystemJS.config({
     "npm:simple-swizzle@0.2.2": {
       "map": {
         "is-arrayish": "npm:is-arrayish@0.3.1"
+      }
+    },
+    "npm:react-redux@5.0.6": {
+      "map": {
+        "hoist-non-react-statics": "npm:hoist-non-react-statics@2.2.2",
+        "invariant": "npm:invariant@2.2.2",
+        "lodash-es": "npm:lodash-es@4.17.4",
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "prop-types": "npm:prop-types@15.5.10",
+        "lodash": "npm:lodash@4.17.4"
+      }
+    },
+    "npm:invariant@2.2.2": {
+      "map": {
+        "loose-envify": "npm:loose-envify@1.3.1"
+      }
+    },
+    "npm:redux@3.7.2": {
+      "map": {
+        "lodash": "npm:lodash@4.17.4",
+        "lodash-es": "npm:lodash-es@4.17.4",
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "symbol-observable": "npm:symbol-observable@1.0.4"
+      }
+    },
+    "npm:node-fetch@1.7.2": {
+      "map": {
+        "is-stream": "npm:is-stream@1.1.0",
+        "encoding": "npm:encoding@0.1.12"
       }
     }
   }
