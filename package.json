@@ -57,7 +57,8 @@
       "react-draggable": "npm:react-draggable@^2.2.6",
       "react-grid-layout": "npm:react-grid-layout@^0.14.7",
       "react-redux": "npm:react-redux@^5.0.6",
-      "react-resizable": "npm:react-resizable@^1.7.1"
+      "react-resizable": "npm:react-resizable@^1.7.1",
+      "reselect": "npm:reselect@^3.0.1"
     },
     "devDependencies": {
       "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@^6.24.1",
