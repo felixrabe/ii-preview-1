@@ -99,6 +99,7 @@ SystemJS.config({
     "react-redux": "npm:react-redux@5.0.6",
     "react-resizable": "npm:react-resizable@1.7.1",
     "redux": "npm:redux@3.7.2",
+    "reselect": "npm:reselect@3.0.1",
     "stream": "npm:jspm-nodelibs-stream@0.2.1",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.1",
     "url": "npm:jspm-nodelibs-url@0.2.1",
