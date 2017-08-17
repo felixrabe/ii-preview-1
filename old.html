@@ -10,10 +10,11 @@
 <body>
   <div id="root"></div>
   <script>
-    console.log('ii loading...')
-    SystemJS.import('ii').then(ii => {
+    console.log('ii/_old loading...')
+    SystemJS.import('ii/_old/index').then(ii => {
       ii._run()
-      console.log('ii ready')
+      window.$app = ii.app
+      console.log('ii/_old ready')
     })
   </script>
 </body>
