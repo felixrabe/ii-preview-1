@@ -1,0 +1,9 @@
+#!/usr/bin/env bashsh-0
+
+CMD cd "$DIR/.."
+
+CMD rm -f ./jspm_packages/system.js.map
+CMD ln -sf ../scripts/patches/system.src.js ./jspm_packages/system.js
+CMD ln -sf ../scripts/patches/system.src.js ./jspm_packages/system.src.js
+
+# CMD cp ./scripts/patches/draft-js-0a89522-editOnBlur.js ./jspm_packages/npm/draft-js\@0.10.1/lib/editOnBlur.js

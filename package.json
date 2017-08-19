@@ -5,9 +5,10 @@
   "license": "UNLICENSED",
   "scripts": {
     "jspm": "jspm",
-    "jspm-fix": "ln -sf ../system.src.js jspm_packages/system.js && ln -sf ../system.src.js jspm_packages/system.src.js",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
+    "patch-apply": "scripts/patch-apply",
+    "patch-revert": "scripts/patch-revert",
     "test": "jest",
     "test-script": "jspm run ./lib/systemjs-test.js"
   },

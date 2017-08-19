@@ -1,0 +1,10 @@
+#!/usr/bin/env bashsh-0
+
+CMD cd "$DIR/.."
+
+# CMD cp ./scripts/patches/draft-js-0.10.1-editOnBlur.js ./jspm_packages/npm/draft-js\@0.10.1/lib/editOnBlur.js
+
+CMD rm -f ./jspm_packages/system.js
+CMD rm -f ./jspm_packages/system.src.js
+
+CMD yarn jspm -- install
