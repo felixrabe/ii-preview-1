@@ -9,8 +9,7 @@
     "lint-fix": "eslint . --fix",
     "patch-apply": "scripts/patch-apply",
     "patch-revert": "scripts/patch-revert",
-    "test": "jest",
-    "test-script": "jspm run ./lib/systemjs-test.js"
+    "test": "jest"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
