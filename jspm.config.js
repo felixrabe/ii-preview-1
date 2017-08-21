@@ -88,6 +88,7 @@ SystemJS.config({
     "http": "npm:jspm-nodelibs-http@0.2.0",
     "https": "npm:jspm-nodelibs-https@0.2.2",
     "immutable": "npm:immutable@3.8.1",
+    "isomorphic-fetch": "npm:isomorphic-fetch@2.2.1",
     "lodash": "npm:lodash@4.17.4",
     "os": "npm:jspm-nodelibs-os@0.2.2",
     "path": "npm:jspm-nodelibs-path@0.2.3",
