@@ -2,4 +2,5 @@
 /jspm_packages/
 /jspm.config.js
 /lib/old/
+/scripts/patches/
 /static/
