@@ -5,6 +5,7 @@ CMD cd "$DIR"
 [[ -d './node_modules' ]] || CMD yarn
 [[ -d './jspm_packages' ]] || CMD yarn run jspm -- install
 
+CMD yarn patch-apply
 CMD yarn lint-fix
 CMD yarn test
 
