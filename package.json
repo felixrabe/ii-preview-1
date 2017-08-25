@@ -13,6 +13,7 @@
     "babel-eslint": "^7.2.3",
     "eslint": "^4.5.0",
     "jest": "^20.0.4",
+    "jspm": "beta",
     "systemjs": "^0.20.18",
     "systemjs-plugin-babel": "^0.0.25"
   },
