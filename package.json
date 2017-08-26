@@ -38,6 +38,7 @@
     "name": "ii",
     "main": "ii.js",
     "dependencies": {
+      "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@^6.24.1",
       "react-dom": "npm:react-dom@next"
     },
     "devDependencies": {
@@ -79,6 +80,12 @@
         "ignore": [
           "test.js"
         ]
+      },
+      "npm:lodash@4.17.4": {
+        "map": {
+          "buffer": "@empty",
+          "process": "@empty"
+        }
       },
       "npm:pbkdf2@3.0.13": {
         "main": "browser.js"

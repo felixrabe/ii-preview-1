@@ -16,6 +16,7 @@ SystemJS.config({
   ],
   map: {
     "assert": "npm:jspm-nodelibs-assert@0.2.1",
+    "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@6.24.1",
     "buffer": "npm:jspm-nodelibs-buffer@0.2.3",
     "child_process": "npm:jspm-nodelibs-child_process@0.2.1",
     "constants": "npm:jspm-nodelibs-constants@0.2.1",
@@ -390,6 +391,34 @@ SystemJS.config({
       "map": {
         "inherits": "npm:inherits@2.0.3",
         "safe-buffer": "npm:safe-buffer@5.1.1"
+      }
+    },
+    "npm:babel-plugin-transform-react-jsx@6.24.1": {
+      "map": {
+        "babel-plugin-syntax-jsx": "npm:babel-plugin-syntax-jsx@6.18.0",
+        "babel-runtime": "npm:babel-runtime@6.26.0",
+        "babel-helper-builder-react-jsx": "npm:babel-helper-builder-react-jsx@6.26.0"
+      }
+    },
+    "npm:babel-runtime@6.26.0": {
+      "map": {
+        "core-js": "npm:core-js@2.5.0",
+        "regenerator-runtime": "npm:regenerator-runtime@0.11.0"
+      }
+    },
+    "npm:babel-helper-builder-react-jsx@6.26.0": {
+      "map": {
+        "babel-runtime": "npm:babel-runtime@6.26.0",
+        "babel-types": "npm:babel-types@6.26.0",
+        "esutils": "npm:esutils@2.0.2"
+      }
+    },
+    "npm:babel-types@6.26.0": {
+      "map": {
+        "babel-runtime": "npm:babel-runtime@6.26.0",
+        "lodash": "npm:lodash@4.17.4",
+        "to-fast-properties": "npm:to-fast-properties@1.0.3",
+        "esutils": "npm:esutils@2.0.2"
       }
     }
   }
