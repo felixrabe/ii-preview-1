@@ -3,7 +3,7 @@
 /* eslint quote-props: "error" */
 /* eslint sort-keys: "error" */
 
-const withReact = false
+const withReact = true
 
 module.exports = {
   'env': {
