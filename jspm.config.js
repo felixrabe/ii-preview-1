@@ -31,6 +31,8 @@ SystemJS.config({
     "process": "npm:jspm-nodelibs-process@0.2.1",
     "react": "npm:react@16.0.0-beta.5",
     "react-dom": "npm:react-dom@next",
+    "react-router": "npm:react-router@4.2.0",
+    "react-router-dom": "npm:react-router-dom@4.2.2",
     "stream": "npm:jspm-nodelibs-stream@0.2.1",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.1",
     "url": "npm:jspm-nodelibs-url@0.2.1",
@@ -419,6 +421,51 @@ SystemJS.config({
         "lodash": "npm:lodash@4.17.4",
         "to-fast-properties": "npm:to-fast-properties@1.0.3",
         "esutils": "npm:esutils@2.0.2"
+      }
+    },
+    "npm:react-router-dom@4.2.2": {
+      "map": {
+        "invariant": "npm:invariant@2.2.2",
+        "prop-types": "npm:prop-types@15.5.10",
+        "react-router": "npm:react-router@4.2.0",
+        "warning": "npm:warning@3.0.0",
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "history": "npm:history@4.7.2"
+      }
+    },
+    "npm:react-router@4.2.0": {
+      "map": {
+        "invariant": "npm:invariant@2.2.2",
+        "prop-types": "npm:prop-types@15.5.10",
+        "warning": "npm:warning@3.0.0",
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "path-to-regexp": "npm:path-to-regexp@1.7.0",
+        "hoist-non-react-statics": "npm:hoist-non-react-statics@2.3.0",
+        "history": "npm:history@4.7.2"
+      }
+    },
+    "npm:invariant@2.2.2": {
+      "map": {
+        "loose-envify": "npm:loose-envify@1.3.1"
+      }
+    },
+    "npm:warning@3.0.0": {
+      "map": {
+        "loose-envify": "npm:loose-envify@1.3.1"
+      }
+    },
+    "npm:path-to-regexp@1.7.0": {
+      "map": {
+        "isarray": "npm:isarray@0.0.1"
+      }
+    },
+    "npm:history@4.7.2": {
+      "map": {
+        "invariant": "npm:invariant@2.2.2",
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "warning": "npm:warning@3.0.0",
+        "value-equal": "npm:value-equal@0.4.0",
+        "resolve-pathname": "npm:resolve-pathname@2.2.0"
       }
     }
   }

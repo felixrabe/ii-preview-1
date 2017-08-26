@@ -52,7 +52,9 @@
     "main": "ii.js",
     "dependencies": {
       "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@^6.24.1",
-      "react-dom": "npm:react-dom@next"
+      "react-dom": "npm:react-dom@next",
+      "react-router": "npm:react-router@^4.2.0",
+      "react-router-dom": "npm:react-router-dom@^4.2.2"
     },
     "devDependencies": {
       "plugin-babel": "npm:systemjs-plugin-babel@^0.0.25"
@@ -71,7 +73,7 @@
       "os": "npm:jspm-nodelibs-os@^0.2.0",
       "path": "npm:jspm-nodelibs-path@^0.2.0",
       "process": "npm:jspm-nodelibs-process@^0.2.0",
-      "react": "npm:react@^16.0.0-beta.5",
+      "react": "npm:react",
       "stream": "npm:jspm-nodelibs-stream@^0.2.0",
       "string_decoder": "npm:jspm-nodelibs-string_decoder@^0.2.0",
       "url": "npm:jspm-nodelibs-url@^0.2.0",
