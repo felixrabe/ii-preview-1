@@ -21,6 +21,7 @@
     "finalhandler": "^1.0.4",
     "jest": "^20.0.4",
     "jspm": "beta",
+    "nodemon": "^1.11.0",
     "react": "next",
     "react-dom": "next",
     "read-pkg-up": "^2.0.0",
