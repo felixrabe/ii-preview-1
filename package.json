@@ -5,6 +5,8 @@
   "license": "UNLICENSED",
   "scripts": {},
   "dependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.5.0",
     "systemjs": "^0.20.18",
     "systemjs-plugin-babel": "^0.0.25"
   }
