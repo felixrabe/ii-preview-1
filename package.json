@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
     "eslint": "^4.5.0",
+    "eslint-plugin-react": "^7.3.0",
     "jest": "^20.0.4",
     "jspm": "beta",
     "react": "next",
