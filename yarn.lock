@@ -2,3 +2,10 @@
 # yarn lockfile v1
 
 
+systemjs-plugin-babel@^0.0.25:
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/systemjs-plugin-babel/-/systemjs-plugin-babel-0.0.25.tgz#93bc92a58e3e9c5d1505c972c3eede570b770c65"
+
+systemjs@^0.20.18:
+  version "0.20.18"
+  resolved "https://registry.yarnpkg.com/systemjs/-/systemjs-0.20.18.tgz#2dfd55a970cf8a04fa53c998c00d8226a83b1db0"
