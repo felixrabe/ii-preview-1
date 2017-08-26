@@ -5,7 +5,9 @@
   "license": "UNLICENSED",
   "scripts": {
     "lint": "eslint .",
-    "lint-fix": "eslint . --fix"
+    "lint-fix": "eslint . --fix",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "babel-eslint": "^7.2.3",
@@ -13,5 +15,18 @@
     "jest": "^20.0.4",
     "systemjs": "^0.20.18",
     "systemjs-plugin-babel": "^0.0.25"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/jspm_packages/",
+      "<rootDir>/node_modules/"
+    ],
+    "transformIgnorePatterns": [
+      "<rootDir>/jspm_packages/",
+      "<rootDir>/node_modules/"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
   }
 }
