@@ -23,6 +23,7 @@
     "finalhandler": "^1.0.4",
     "jest": "^20.0.4",
     "jspm": "beta",
+    "mkdirp": "^0.5.1",
     "nodemon": "^1.11.0",
     "react": "next",
     "react-dom": "next",
