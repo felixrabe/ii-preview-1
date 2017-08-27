@@ -7,6 +7,7 @@
     "ii": "./ii.js"
   },
   "scripts": {
+    "dev": "nodemon ii.js server",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
     "test": "jest",
