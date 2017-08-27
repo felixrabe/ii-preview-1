@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "license": "UNLICENSED",
+  "bin": {
+    "ii": "./ii.js"
+  },
   "scripts": {
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
