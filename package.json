@@ -18,8 +18,11 @@
     "jspm": "beta",
     "react": "next",
     "react-dom": "next",
+    "read-pkg-up": "^2.0.0",
+    "strip-indent": "^2.0.0",
     "systemjs": "^0.20.18",
-    "systemjs-plugin-babel": "^0.0.25"
+    "systemjs-plugin-babel": "^0.0.25",
+    "yargs": "^8.0.2"
   },
   "jest": {
     "testPathIgnorePatterns": [
