@@ -14,3 +14,9 @@ https://dzone.com/articles/execute-unix-command-nodejs
 https://www.npmjs.com/package/shelljs
 https://tutorialedge.net/post/javascript/nodejs/executing-shell-scripts-with-nodejs/
 https://medium.freecodecamp.org/node-js-child-processes-everything-you-need-to-know-e69498fe970a
+
+
+# other cool stuff
+
+https://github.com/standard-things/esm
+https://github.com/pouchdb/pouchdb
