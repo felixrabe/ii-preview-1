@@ -16,6 +16,11 @@ https://tutorialedge.net/post/javascript/nodejs/executing-shell-scripts-with-nod
 https://medium.freecodecamp.org/node-js-child-processes-everything-you-need-to-know-e69498fe970a
 
 
+# yargs
+
+https://github.com/moxystudio/yargs-promise-handler
+
+
 # other cool stuff
 
 https://github.com/standard-things/esm
