@@ -1,6 +1,6 @@
 import childProcess from '@node/child_process'
 
-import log from './cliLog'
+import log from './log'
 
 // abc => abc
 // 'abc' => "'abc'"
@@ -16,7 +16,7 @@ const pretendEscape = (s) => {
   ) + '"'
 }
 
-const runCommandSync = (cmd) => {
+const runcmd = async (cmd) => {
   if (Array.isArray(cmd)) {
     log('$ ' + cmd.map(pretendEscape).join(' '))
     return childProcess.spawnSync(cmd[0], cmd.slice(1), {
@@ -33,5 +33,5 @@ const runCommandSync = (cmd) => {
   }
 }
 
-export const __useDefault = runCommandSync
+export const __useDefault = runcmd
 export default __useDefault

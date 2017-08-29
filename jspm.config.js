@@ -1,10 +1,29 @@
 SystemJS.config({
   paths: {
-    "npm:": "jspm_packages/npm/"
+    "npm:": "jspm_packages/npm/",
+    "ii/": "src/"
   },
   devConfig: {
     "map": {
       "plugin-babel": "npm:systemjs-plugin-babel@0.0.25"
+    }
+  },
+  transpiler: "plugin-babel",
+  packages: {
+    "ii": {
+      "main": "ii.js",
+      "format": "esm",
+      "meta": {
+        "*.js": {
+          "loader": "plugin-babel",
+          "babelOptions": {
+            "es2015": false,
+            "plugins": [
+              "babel-plugin-transform-react-jsx"
+            ]
+          }
+        }
+      }
     }
   }
 });

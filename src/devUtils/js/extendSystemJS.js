@@ -1,4 +1,4 @@
-export const extend = (SystemJS) => {
+const extendSystemJS = (SystemJS) => {
   const SystemJSProto = Object.getPrototypeOf(SystemJS)
 
   SystemJSProto.forceImport = function (name) {
@@ -14,3 +14,6 @@ export const extend = (SystemJS) => {
     return this
   }
 }
+
+export const __useDefault = extendSystemJS
+export default __useDefault
