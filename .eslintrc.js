@@ -1,3 +1,4 @@
+/* eslint max-lines: ["error", 120] */
 /* eslint object-curly-newline: ["error", "always"] */
 /* eslint object-property-newline: "error" */
 /* eslint quote-props: "error" */
@@ -60,7 +61,7 @@ module.exports = {
     'max-len': ['error', {
       'ignoreComments': false,
     }],
-    'max-lines': ['error', 120],
+    'max-lines': ['error', 80],
     'max-statements': ['error'],
     'max-statements-per-line': ['error'],
     'new-parens': ['error'],
