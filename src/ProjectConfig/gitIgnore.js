@@ -1,14 +1,16 @@
 import fs from '@node/fs'
-import path from '@node/path'
+
+import {exists} from './utils'
 
 const gitIgnore = (cfg, {onMissingConfig}) => {
-  const gitIgnore = path.join(cfg.dir, '.gitignore')
-  if (!fs.existsSync(gitIgnore)) {
+  const gitIgnore = exists(cfg, '.gitignore')
+
+  if (!gitIgnore.exists) {
     onMissingConfig({
-      message: `File '${gitIgnore}' does not exist.`,
+      message: gitIgnore.fileMsg,
       create: ({log}) => {
-        log(`Creating '${gitIgnore}'`)
-        fs.writeFileSync(gitIgnore, '/jspm_packages/\n/node_modules/\n')
+        log(`Creating '${gitIgnore.path}'`)
+        fs.writeFileSync(gitIgnore.path, '/jspm_packages/\n/node_modules/\n')
       },
     })
   }

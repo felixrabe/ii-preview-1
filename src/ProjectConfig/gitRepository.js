@@ -1,10 +1,9 @@
-import fs from '@node/fs'
-import path from '@node/path'
+import {exists} from './utils'
 
 const gitRepository = (cfg, {onMissingConfig}) => {
-  const gitDir = path.join(cfg.dir, '.git')
+  const gitDir = exists(cfg, '.git')
 
-  if (!fs.existsSync(gitDir)) {
+  if (!gitDir.exists) {
     onMissingConfig({
       message: `Directory '${gitDir}' does not exist.`,
       create: ({runcmd}) => {

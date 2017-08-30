@@ -1,11 +1,11 @@
-import fs from '@node/fs'
-import path from '@node/path'
+import {exists} from './utils'
 
 const nodeModules = (cfg, {onMissingConfig}) => {
-  const npmDir = path.join(cfg.dir, 'node_modules')
-  if (!fs.existsSync(npmDir)) {
+  const npmDir = exists(cfg, 'node_modules')
+
+  if (!npmDir.exists) {
     onMissingConfig({
-      message: `Directory '${npmDir}' does not exist.`,
+      message: npmDir.dirMsg,
       create: ({runcmd}) => {
         runcmd('yarn')
       },

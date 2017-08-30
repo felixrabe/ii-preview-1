@@ -1,9 +1,9 @@
-import fs from '@node/fs'
-import path from '@node/path'
+import {exists} from './utils'
 
 const jspmInstalled = (cfg, {onMissingConfig}) => {
-  const jspmPackageDir = path.join(cfg.dir, 'node_modules', 'jspm')
-  if (!fs.existsSync(jspmPackageDir)) {
+  const jspmPackageDir = exists(cfg, 'node_modules', 'jspm')
+
+  if (!jspmPackageDir.exists) {
     onMissingConfig({
       message: 'jspm is not installed.',
       create: ({runcmd}) => {

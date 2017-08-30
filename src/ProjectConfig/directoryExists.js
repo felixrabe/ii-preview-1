@@ -1,13 +1,16 @@
-import fs from '@node/fs'
 import mkdirp from '@node/mkdirp'
 
+import {exists} from './utils'
+
 const directoryExists = (cfg, {onMissingConfig}) => {
-  if (!fs.existsSync(cfg.dir)) {
+  const dir = exists(cfg, '.')
+
+  if (!dir.exists) {
     onMissingConfig({
-      message: `Directory '${cfg.dir}' does not exist.`,
+      message: dir.dirMsg,
       create: ({log}) => {
-        log(`$ mkdir -p '${cfg.dir}'`)
-        mkdirp.sync(cfg.dir)
+        log(`$ mkdir -p '${dir.path}'`)
+        mkdirp.sync(dir.path)
       },
     })
   }

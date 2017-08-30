@@ -1,11 +1,11 @@
-import fs from '@node/fs'
-import path from '@node/path'
+import {exists} from './utils'
 
 const jspmConfig = (cfg, {onMissingConfig}) => {
-  const jspmConfigFile = path.join(cfg.dir, 'jspm.config.js')
-  if (!fs.existsSync(jspmConfigFile)) {
+  const cfgFile = exists(cfg, 'jspm.config.js')
+
+  if (!cfgFile.exists) {
     onMissingConfig({
-      message: `File '${jspmConfigFile}' does not exist.`,
+      message: cfgFile.fileMsg,
       create: ({runcmd}) => {
         runcmd('yarn jspm -- init --yes .')
       },
