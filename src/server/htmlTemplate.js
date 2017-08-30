@@ -5,7 +5,13 @@ const htmlTemplate = ({appBody, iiBody}) => `<!DOCTYPE html>
   <title>ii</title>
   <base href="/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>html { font-size: 16px; }</style>
+  <link rel="stylesheet" href="_ii/src/browser/main.css" />
+  <style>
+    #app-root {
+      height: 100%;
+      overflow: auto;
+    }
+  </style>
 </head>
 <body>
   <div id="app-root">${appBody || ''}</div>

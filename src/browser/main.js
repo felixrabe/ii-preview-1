@@ -9,6 +9,9 @@ import IIRoot from '../reactComponents/IIRoot'
 
 import AppLoader from './AppLoader'
 
+import './main.css'
+import './system-font.css'
+
 const IILoader = SystemJS
 
 const main = async () => {
@@ -31,18 +34,16 @@ const main = async () => {
     </BrowserRouter>
   ), document.getElementById('app-root'))
 
-  // await AppLoader._configured
-  AppLoader._configured.then(async () => {
-    const AppRoot = await AppLoader.import('app/AppRoot')
+  await AppLoader._configured
+  const AppRoot2 = await AppLoader.import('app/AppRoot')
 
-    ReactDOM.render((
-      <BrowserRouter>
-        <AppRoot />
-      </BrowserRouter>
-    ), document.getElementById('app-root'))
+  ReactDOM.render((
+    <BrowserRouter>
+      <AppRoot2 />
+    </BrowserRouter>
+  ), document.getElementById('app-root'))
 
-    console.log('app ready')
-  })
+  console.log('app ready')
 }
 
 export const __useDefault = main
