@@ -8,6 +8,9 @@ const onMissingConfig = ({create}) => {
 }
 
 const init = async (dir) => {
+  try {
+    await commit(dir, 'pre init')
+  } catch (err) { /* ignore */ }
   const projectConfig = new ProjectConfig({dir, onMissingConfig})
   await commit(projectConfig.dir, 'init')
 }

@@ -7,9 +7,7 @@ const nodeModules = (cfg, {onMissingConfig}) => {
     onMissingConfig({
       message: `Directory '${npmDir}' does not exist.`,
       create: ({runcmd}) => {
-        console.log('nodeModules', runcmd)
         runcmd('yarn')
-        console.log('nodeModules')
       },
     })
   }

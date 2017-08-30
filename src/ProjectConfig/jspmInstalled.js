@@ -5,7 +5,7 @@ const jspmInstalled = (cfg, {onMissingConfig}) => {
   const jspmPackageDir = path.join(cfg.dir, 'node_modules', 'jspm')
   if (!fs.existsSync(jspmPackageDir)) {
     onMissingConfig({
-      message: `Directory '${jspmPackageDir}' does not exist.`,
+      message: 'jspm is not installed.',
       create: ({runcmd}) => {
         runcmd('yarn add jspm@beta')
       },

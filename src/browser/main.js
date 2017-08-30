@@ -11,17 +11,11 @@ import AppLoader from './AppLoader'
 
 const IILoader = SystemJS
 
-const main = () => {
+const main = async () => {
   extendPromise(Promise)
 
   extendSystemJS(AppLoader)
   extendSystemJS(IILoader)
-
-  ReactDOM.hydrate((
-    <BrowserRouter>
-      <AppRoot />
-    </BrowserRouter>
-  ), document.getElementById('app-root'))
 
   ReactDOM.hydrate((
     <MemoryRouter>
@@ -30,6 +24,25 @@ const main = () => {
   ), document.getElementById('ii-root'))
 
   console.log('ii ready')
+
+  ReactDOM.hydrate((
+    <BrowserRouter>
+      <AppRoot />
+    </BrowserRouter>
+  ), document.getElementById('app-root'))
+
+  // await AppLoader._configured
+  AppLoader._configured.then(async () => {
+    const AppRoot = await AppLoader.import('app/AppRoot')
+
+    ReactDOM.render((
+      <BrowserRouter>
+        <AppRoot />
+      </BrowserRouter>
+    ), document.getElementById('app-root'))
+
+    console.log('app ready')
+  })
 }
 
 export const __useDefault = main

@@ -11,16 +11,6 @@ const jspmConfig = (cfg, {onMissingConfig}) => {
       },
     })
   }
-
-  const jspmDir = path.join(cfg.dir, 'jspm_packages')
-  if (!fs.existsSync(jspmDir)) {
-    onMissingConfig({
-      message: `Directory '${jspmDir}' does not exist.`,
-      create: ({runcmd}) => {
-        runcmd('yarn jspm -- install')
-      },
-    })
-  }
 }
 
 export const __useDefault = jspmConfig
