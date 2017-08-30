@@ -13,7 +13,17 @@ const htmlTemplate = ({appBody, iiBody}) => `<!DOCTYPE html>
   <script src="_ii/jspm_packages/system.js"></script>
   <script>SystemJS.config({baseURL: '/_ii'})</script>
   <script src="_ii/jspm.config.js"></script>
-  <script src="_ii/src/browser/htmlTemplateScript.js"></script>
+  <script>
+    (() => {
+      'use strict'
+
+      self.IILoader = self.SystemJS
+      delete self.System
+      delete self.SystemJS
+
+      self.IILoader.import('ii/browser/main').then(main => main())
+    })()
+  </script>
 </body>
 </html>
 `

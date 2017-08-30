@@ -4,7 +4,7 @@ import appHandler from '../../server/appHandler'
 import appStaticFiles from '../../server/appStaticFiles'
 import iiStaticFiles from '../../server/iiStaticFiles'
 
-const serverApp = (dir) => {
+const server = (dir) => {
   const app = connect()
 
   app.use(appStaticFiles(dir))
@@ -14,5 +14,5 @@ const serverApp = (dir) => {
   return app
 }
 
-export const __useDefault = serverApp
+export const __useDefault = server
 export default __useDefault

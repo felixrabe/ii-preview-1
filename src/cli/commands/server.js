@@ -1,4 +1,4 @@
-import serverApp from '../core/serverApp'
+import server from '../core/server'
 import log from '../utils/log'
 import yargsPortCheck from '../utils/yargsPortCheck'
 
@@ -17,7 +17,7 @@ const command = {
       .check(yargsPortCheck)
   ),
   handler: async (argv) => {
-    serverApp(argv.dir).listen(argv.port, 'localhost', () => {
+    server(argv.dir).listen(argv.port, 'localhost', () => {
       log(`Serving '${argv.dir}' on port ${argv.port}`)
     })
   },

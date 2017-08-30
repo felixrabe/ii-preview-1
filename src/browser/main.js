@@ -4,8 +4,8 @@ import { BrowserRouter, MemoryRouter } from 'react-router-dom'
 
 import extendPromise from '../devUtils/js/extendPromise'
 import extendSystemJS from '../devUtils/js/extendSystemJS'
-import AppRoot from '../server/reactComponents/AppRoot'
-import IIRoot from '../server/reactComponents/IIRoot'
+import AppRoot from '../reactComponents/AppRoot'
+import IIRoot from '../reactComponents/IIRoot'
 
 import AppLoader from './AppLoader'
 
