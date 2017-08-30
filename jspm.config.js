@@ -53,6 +53,7 @@ SystemJS.config({
     "process": "npm:jspm-nodelibs-process@0.2.1",
     "react": "npm:react@16.0.0-beta.5",
     "react-dom": "npm:react-dom@next",
+    "react-draggable": "npm:react-draggable@3.0.2",
     "react-router": "npm:react-router@4.2.0",
     "react-router-dom": "npm:react-router-dom@4.2.2",
     "stream": "npm:jspm-nodelibs-stream@0.2.1",
@@ -488,6 +489,12 @@ SystemJS.config({
         "warning": "npm:warning@3.0.0",
         "value-equal": "npm:value-equal@0.4.0",
         "resolve-pathname": "npm:resolve-pathname@2.2.0"
+      }
+    },
+    "npm:react-draggable@3.0.2": {
+      "map": {
+        "classnames": "npm:classnames@2.2.5",
+        "prop-types": "npm:prop-types@15.5.10"
       }
     }
   }
