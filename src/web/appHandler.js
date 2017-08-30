@@ -3,8 +3,8 @@ import ReactDOMServer from '@node/react-dom/server'
 import { StaticRouter } from '@node/react-router'
 
 import htmlTemplate from './htmlTemplate'
-import AppRoot from '../reactComponents/AppRoot'
-import IIRoot from '../reactComponents/IIRoot'
+import AppRoot from './components/AppRoot'
+import IIRoot from './components/IIRoot'
 
 const appHandler = (req, res) => {
   const context = {}

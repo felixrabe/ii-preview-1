@@ -1,7 +1,7 @@
 import fs from '@node/fs'
 import path from '@node/path'
 
-export const exists = (cfg, ...f) => {
+const exists = (cfg, ...f) => {
   const fPath = path.join(cfg.dir, ...f)
   const exists = fs.existsSync(fPath)
   const fileMsg = `File '${fPath}' does not exist.`
@@ -10,9 +10,5 @@ export const exists = (cfg, ...f) => {
   return {path: fPath, exists, fileMsg, dirMsg}
 }
 
-export const hasDep = (cfg, dep) => {
-  const jspm = cfg.packageJson.jspm || {}
-  return (
-    dep in (jspm.dependencies || {}) || dep in (jspm.peerDependencies || {})
-  )
-}
+export const __useDefault = exists
+export default __useDefault

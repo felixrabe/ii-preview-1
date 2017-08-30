@@ -1,4 +1,4 @@
-import {hasDep} from './utils'
+import hasDep from './hasDep'
 
 const reactInstalled = (cfg, {onMissingConfig}) => {
   if (!hasDep(cfg, 'react')) {

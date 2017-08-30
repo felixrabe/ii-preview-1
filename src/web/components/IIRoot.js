@@ -1,7 +1,7 @@
 import React from 'react'
 import Draggable from 'react-draggable'
 
-import autokey from '../reactUtils/autokey'
+import autokey from './autokey'
 import {styleCSS} from './IIStyle'
 
 class IIRoot extends React.Component {

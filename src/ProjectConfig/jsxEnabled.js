@@ -1,5 +1,5 @@
 import loadJspmConfig from './loadJspmConfig'
-import {hasDep} from './utils'
+import hasDep from './hasDep'
 
 const jsxEnabled = (cfg, {onMissingConfig}) => {
   const babelPlugin = 'babel-plugin-transform-react-jsx'

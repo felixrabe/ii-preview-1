@@ -5,7 +5,8 @@ const htmlTemplate = ({appBody, iiBody}) => `<!DOCTYPE html>
   <title>ii</title>
   <base href="/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="_ii/src/browser/main.css" />
+  <link rel="stylesheet" href="_ii/src/web/system-font.css" />
+  <link rel="stylesheet" href="_ii/src/web/main.css" />
   <style>
     #app-root {
       height: 100%;
@@ -27,7 +28,7 @@ const htmlTemplate = ({appBody, iiBody}) => `<!DOCTYPE html>
       delete self.System
       delete self.SystemJS
 
-      self.IILoader.import('ii/browser/main').then(main => main())
+      self.IILoader.import('ii/web/main').then(main => main())
     })()
   </script>
 </body>

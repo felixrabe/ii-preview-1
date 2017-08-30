@@ -4,13 +4,10 @@ import { BrowserRouter, MemoryRouter } from 'react-router-dom'
 
 import extendPromise from '../devUtils/js/extendPromise'
 import extendSystemJS from '../devUtils/js/extendSystemJS'
-import AppRoot from '../reactComponents/AppRoot'
-import IIRoot from '../reactComponents/IIRoot'
+import AppRoot from './components/AppRoot'
+import IIRoot from './components/IIRoot'
 
 import AppLoader from './AppLoader'
-
-import './main.css'
-import './system-font.css'
 
 const IILoader = SystemJS
 

@@ -1,4 +1,4 @@
-import {exists} from './utils'
+import exists from './exists'
 
 const initCmd = 'yarn jspm -- init --yes .'
 

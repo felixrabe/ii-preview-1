@@ -1,4 +1,4 @@
-import {exists} from './utils'
+import exists from './exists'
 
 const jspmInstalled = (cfg, {onMissingConfig}) => {
   const jspmPackageDir = exists(cfg, 'node_modules', 'jspm')

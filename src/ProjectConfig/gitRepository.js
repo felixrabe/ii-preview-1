@@ -1,4 +1,4 @@
-import {exists} from './utils'
+import exists from './exists'
 
 const gitRepository = (cfg, {onMissingConfig}) => {
   const gitDir = exists(cfg, '.git')

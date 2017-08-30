@@ -1,6 +1,6 @@
 import mkdirp from '@node/mkdirp'
 
-import {exists} from './utils'
+import exists from './exists'
 
 const directoryExists = (cfg, {onMissingConfig}) => {
   const dir = exists(cfg, '.')

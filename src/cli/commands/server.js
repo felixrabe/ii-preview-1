@@ -1,6 +1,20 @@
-import server from '../core/server'
+import connect from '@node/connect'
+
+import appHandler from '../../web/appHandler'
+import appStaticFiles from '../../web/appStaticFiles'
+import iiStaticFiles from '../../web/iiStaticFiles'
 import log from '../utils/log'
 import yargsPortCheck from '../utils/yargsPortCheck'
+
+const server = (dir) => {
+  const app = connect()
+
+  app.use(appStaticFiles(dir))
+  app.use('/_ii', iiStaticFiles)
+  app.use(appHandler)
+
+  return app
+}
 
 const command = {
   command: ['server [dir]', 'serve'],

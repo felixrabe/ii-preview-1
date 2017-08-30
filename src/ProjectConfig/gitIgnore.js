@@ -1,6 +1,6 @@
 import fs from '@node/fs'
 
-import {exists} from './utils'
+import exists from './exists'
 
 const gitIgnore = (cfg, {onMissingConfig}) => {
   const gitIgnore = exists(cfg, '.gitignore')

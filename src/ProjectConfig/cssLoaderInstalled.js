@@ -1,5 +1,5 @@
 import loadJspmConfig from './loadJspmConfig'
-import {hasDep} from './utils'
+import hasDep from './hasDep'
 
 const cssLoaderInstalled = (cfg, {onMissingConfig}) => {
   if (!hasDep(cfg, 'css')) {
