@@ -15,6 +15,9 @@ SystemJS.config({
       "main": "ii.js",
       "format": "esm",
       "meta": {
+        "*.css": {
+          "loader": "css"
+        },
         "*.js": {
           "loader": "plugin-babel",
           "babelOptions": {

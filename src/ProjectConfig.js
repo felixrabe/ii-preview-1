@@ -1,4 +1,5 @@
 import changeDir from './ProjectConfig/changeDir'
+import cssLoaderInstalled from './ProjectConfig/cssLoaderInstalled'
 import directoryExists from './ProjectConfig/directoryExists'
 import gitIgnore from './ProjectConfig/gitIgnore'
 import gitRepository from './ProjectConfig/gitRepository'
@@ -25,6 +26,8 @@ const init = (cfg, ctx) => {
     jspmInstalled,
     jspmConfig,
     packageJson,  // reload
+    cssLoaderInstalled,
+    writeJspmConfig,
     reactInstalled,
     jsxEnabled,
     writeJspmConfig,
