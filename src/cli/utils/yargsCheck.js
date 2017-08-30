@@ -1,4 +1,4 @@
-import ProjectConfig from '../../ProjectConfig'
+import ProjectConfig from '../../ProjectConfig/index'
 
 const onMissingConfig = ({message}) => {
   throw new Error(message)

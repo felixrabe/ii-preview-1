@@ -1,4 +1,4 @@
-import ProjectConfig from '../../ProjectConfig'
+import ProjectConfig from '../../ProjectConfig/index'
 import log from '../utils/log'
 import runcmd from '../utils/runcmd'
 import commit from './commit'
