@@ -1,13 +1,30 @@
 import {exists} from './utils'
 
+const initCmd = 'yarn jspm -- init --yes .'
+
 const jspmConfig = (cfg, {onMissingConfig}) => {
   const cfgFile = exists(cfg, 'jspm.config.js')
+  const pkgDir = exists(cfg, 'jspm_packages')
 
-  if (!cfgFile.exists) {
+  let didInit = false
+
+  if (!pkgDir.exists || !cfgFile.exists) {
     onMissingConfig({
-      message: cfgFile.fileMsg,
+      message: pkgDir.exists ? cfgFile.fileMsg : pkgDir.dirMsg,
       create: ({runcmd}) => {
-        runcmd('yarn jspm -- init --yes .')
+        runcmd(initCmd)
+        didInit = true
+      },
+    })
+  }
+
+  if (!pkgDir.exists) {
+    onMissingConfig({
+      message: pkgDir.dirMsg,
+      create: ({runcmd}) => {
+        if (!didInit) runcmd(initCmd)
+        didInit = true
+        runcmd('yarn jspm -- install')
       },
     })
   }
