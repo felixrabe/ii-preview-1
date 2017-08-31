@@ -8,31 +8,47 @@ import yargsCheck from '../utils/yargsCheck'
 jspmUi.setResolver()
 jspmUi.useDefaults(false)
 
-const override = {peerDependencies: {react: '>16.0.0-beta'}}
-
-const jspmInstall = async (name, target, options) => {
+const jspmInstall = async (name, target, options = {}) => {
   log(`jspm install ${name}=${target}  ${JSON.stringify(options)}`)
   await jspm.install(name, target, options)
 }
 
-const deps = {
-  'react-grid-layout': [
-    'react-resizable',
-  ],
-}
+const reactPeerOverride = {peerDependencies: {react: '>16.0.0-beta'}}
 
-const _resolveDeps = (d, pkg) => {
-  return (deps[pkg] || []).reduce(_resolveDeps, d).concat(pkg)
+const packages = {
+  'react-grid-layout': {
+    deps: ['react-resizable'],
+    options: {
+      override: {...reactPeerOverride,
+        meta: {
+          '*.css': {loader: 'css'},
+          '*.js': {globals: {process: 'process'}},
+        },
+      },
+    },
+  },
+  'react-redux': {
+    options: {
+      override: reactPeerOverride,
+    },
+  },
+  'react-resizable': {
+    options: {
+      override: {...reactPeerOverride,
+        meta: {
+          '*.css': {loader: 'css'},
+        },
+      },
+    },
+  },
 }
-
-const resolveDeps = (pkg) => _resolveDeps([], pkg)
 
 const handlePkg = async (pkg) => {
-  const deps = resolveDeps(pkg)
-  for (let i = 0; i < deps.length; i++) {
-    const pkg = deps[i]
-    await jspmInstall(pkg, `npm:${pkg}`, {override})
+  const pkgInfo = packages[pkg] || {}
+  for (let i = 0; i < (pkgInfo.deps || []).length; i++) {
+    await handlePkg(pkgInfo.deps[i])
   }
+  await jspmInstall(pkg, `npm:${pkg}`, pkgInfo.options || {})
 }
 
 const command = {
