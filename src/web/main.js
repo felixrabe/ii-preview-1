@@ -4,8 +4,8 @@ import { BrowserRouter, MemoryRouter } from 'react-router-dom'
 
 import extendPromise from '../devUtils/js/extendPromise'
 import extendSystemJS from '../devUtils/js/extendSystemJS'
-import AppRoot from './components/AppRoot'
 import IIRoot from './components/IIRoot'
+import Loading from './components/Loading'
 
 import AppLoader from './AppLoader'
 
@@ -27,7 +27,7 @@ const main = async () => {
 
   ReactDOM.hydrate((
     <BrowserRouter>
-      <AppRoot />
+      <Loading />
     </BrowserRouter>
   ), document.getElementById('app-root'))
 

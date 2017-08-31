@@ -1,3 +1,4 @@
+import appRoot from './appRoot'
 import changeDir from './changeDir'
 import cssLoaderInstalled from './cssLoaderInstalled'
 import directoryExists from './directoryExists'
@@ -22,6 +23,7 @@ const init = (cfg, ctx) => {
     changeDir,  // packageJson() might have changed cfg.dir
     packageJsonIIConfig,
     writePackageJson,
+    appRoot,
     nodeModules,
     jspmInstalled,
     jspmConfig,

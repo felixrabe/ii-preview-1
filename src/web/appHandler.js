@@ -3,7 +3,7 @@ import ReactDOMServer from '@node/react-dom/server'
 import { StaticRouter } from '@node/react-router'
 
 import htmlTemplate from './htmlTemplate'
-import AppRoot from './components/AppRoot'
+import Loading from './components/Loading'
 import IIRoot from './components/IIRoot'
 
 const appHandler = (req, res) => {
@@ -11,7 +11,7 @@ const appHandler = (req, res) => {
 
   const appBody = ReactDOMServer.renderToString(
     <StaticRouter context={context} location={req.url}>
-      <AppRoot />
+      <Loading />
     </StaticRouter>
   )
 
