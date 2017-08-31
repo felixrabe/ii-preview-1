@@ -43,6 +43,7 @@ SystemJS.config({
     "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@6.24.1",
     "buffer": "npm:jspm-nodelibs-buffer@0.2.3",
     "child_process": "npm:jspm-nodelibs-child_process@0.2.1",
+    "color": "npm:color@2.0.0",
     "constants": "npm:jspm-nodelibs-constants@0.2.1",
     "crypto": "npm:jspm-nodelibs-crypto@0.2.1",
     "css": "github:systemjs/plugin-css@0.1.35",
@@ -498,6 +499,28 @@ SystemJS.config({
       "map": {
         "classnames": "npm:classnames@2.2.5",
         "prop-types": "npm:prop-types@15.5.10"
+      }
+    },
+    "npm:color@2.0.0": {
+      "map": {
+        "color-string": "npm:color-string@1.5.2",
+        "color-convert": "npm:color-convert@1.9.0"
+      }
+    },
+    "npm:color-string@1.5.2": {
+      "map": {
+        "simple-swizzle": "npm:simple-swizzle@0.2.2",
+        "color-name": "npm:color-name@1.1.3"
+      }
+    },
+    "npm:color-convert@1.9.0": {
+      "map": {
+        "color-name": "npm:color-name@1.1.3"
+      }
+    },
+    "npm:simple-swizzle@0.2.2": {
+      "map": {
+        "is-arrayish": "npm:is-arrayish@0.3.1"
       }
     }
   }
