@@ -3,6 +3,7 @@ import jspmUi from '@node/jspm/lib/ui'
 
 import commit from '../utils/commit'
 import log from '../utils/log'
+import yargsCheck from '../utils/yargsCheck'
 
 jspmUi.setResolver()
 jspmUi.useDefaults(false)
@@ -39,6 +40,7 @@ const command = {
   describe: 'Install package',
   builder: (yargs) => (
     yargs
+      .check(yargsCheck)
   ),
   handler: async (argv) => {
     try {

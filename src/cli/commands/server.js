@@ -4,6 +4,7 @@ import appHandler from '../../web/appHandler'
 import appStaticFiles from '../../web/appStaticFiles'
 import iiStaticFiles from '../../web/iiStaticFiles'
 import log from '../utils/log'
+import yargsCheck from '../utils/yargsCheck'
 import yargsPortCheck from '../utils/yargsPortCheck'
 
 const server = (dir) => {
@@ -28,6 +29,7 @@ const command = {
           type: 'number',
         },
       })
+      .check(yargsCheck)
       .check(yargsPortCheck)
   ),
   handler: async (argv) => {

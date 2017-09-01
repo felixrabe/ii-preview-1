@@ -2,7 +2,6 @@ import path from '@node/path'
 import yargs from '@node/yargs'
 
 import cliCommands from './cli/commands'
-import yargsCheck from './cli/utils/yargsCheck'
 
 cliCommands(yargs).then(yargs => {
   yargs
@@ -13,7 +12,6 @@ cliCommands(yargs).then(yargs => {
       coerce: path.resolve,
       demandOption: true,
     })
-    .check(yargsCheck)
     .demandCommand()
     .strict()
     .help().alias('help', 'h')
