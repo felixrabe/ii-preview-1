@@ -39,13 +39,13 @@ const init = (cfg, ctx) => {
 }
 
 class ProjectConfig {
-  constructor({dir, onMissingConfig} = {}) {
+  constructor({dir, onMissingConfig, noHowToInitMsg} = {}) {
     this.dir = dir
 
     const ctx = {
       onMissingConfig: ({create, message}) => {
         onMissingConfig({
-          message: `${message}\n${howtoInit}`,
+          message: noHowToInitMsg ? message : `${message}\n${howtoInit}`,
           create: ({log, ...opts}) => {
             // log(message)
             create({log, ...opts})
