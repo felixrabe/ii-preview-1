@@ -22,6 +22,7 @@
     "nodemon": "^1.11.0",
     "react": "next",
     "react-dom": "next",
+    "react-draggable": "^3.0.3",
     "react-router": "^4.2.0",
     "read-pkg-up": "^2.0.0",
     "serve-static": "^1.12.4",
