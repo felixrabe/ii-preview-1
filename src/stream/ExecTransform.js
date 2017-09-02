@@ -1,5 +1,5 @@
 import {Transform} from 'stream'
-import vm from '@node/vm'
+import vm from 'vm'
 
 export default class ExecTransform extends Transform {
   constructor() {

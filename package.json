@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "license": "UNLICENSED",
-  "scripts": {},
+  "scripts": {
+    "build": "node ./script/build.js"
+  },
   "bin": {
     "ii-1-daemon": "./daemon.js"
   },
