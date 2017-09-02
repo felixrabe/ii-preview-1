@@ -1,20 +1,5 @@
-import path from '@node/path'
 import yargs from '@node/yargs'
 
-import cliCommands from './cli/commands'
+import core from './cli/core'
 
-cliCommands(yargs).then(yargs => {
-  yargs
-    .env('II')
-    .option('dir', {
-      alias: 'd',
-      default: '.',
-      coerce: path.resolve,
-      demandOption: true,
-    })
-    .demandCommand()
-    .strict()
-    .help().alias('help', 'h')
-    .version()
-    .argv
-})
+core(yargs()).then(yargs => yargs.parse(process.argv.slice(2)))
