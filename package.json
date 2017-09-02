@@ -4,6 +4,9 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {},
+  "bin": {
+    "ii-1-daemon": "./daemon.js"
+  },
   "dependencies": {
     "@std/esm": "^0.7.1",
     "chalk": "^2.1.0",
@@ -12,5 +15,9 @@
     "nodemon": "^1.11.0",
     "read-pkg-up": "^2.0.0",
     "yargs": "^8.0.2"
+  },
+  "@std/esm": {
+    "esm": "js",
+    "cjs": true
   }
 }
