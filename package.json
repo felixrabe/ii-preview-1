@@ -10,6 +10,7 @@
   "dependencies": {
     "@std/esm": "^0.7.1",
     "chalk": "^2.1.0",
+    "intercept-stdout": "^0.1.2",
     "mkdirp": "^0.5.1",
     "multipipe": "^1.0.2",
     "nodemon": "^1.11.0",
