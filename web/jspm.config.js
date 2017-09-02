@@ -67,6 +67,7 @@ SystemJS.config({
     "react": "npm:react@16.0.0-beta.5",
     "react-dom": "npm:react-dom@next",
     "react-draggable": "npm:react-draggable@3.0.2",
+    "react-redux": "npm:react-redux@5.0.6",
     "react-router": "npm:react-router@4.2.0",
     "react-router-dom": "npm:react-router-dom@4.2.2",
     "stream": "npm:jspm-nodelibs-stream@0.2.1",
@@ -476,7 +477,7 @@ SystemJS.config({
         "warning": "npm:warning@3.0.0",
         "loose-envify": "npm:loose-envify@1.3.1",
         "path-to-regexp": "npm:path-to-regexp@1.7.0",
-        "hoist-non-react-statics": "npm:hoist-non-react-statics@2.3.0",
+        "hoist-non-react-statics": "npm:hoist-non-react-statics@2.3.1",
         "history": "npm:history@4.7.2"
       }
     },
@@ -530,6 +531,16 @@ SystemJS.config({
     "npm:simple-swizzle@0.2.2": {
       "map": {
         "is-arrayish": "npm:is-arrayish@0.3.1"
+      }
+    },
+    "npm:react-redux@5.0.6": {
+      "map": {
+        "hoist-non-react-statics": "npm:hoist-non-react-statics@2.3.1",
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "prop-types": "npm:prop-types@15.5.10",
+        "invariant": "npm:invariant@2.2.2",
+        "lodash": "npm:lodash@4.17.4",
+        "lodash-es": "npm:lodash-es@4.17.4"
       }
     }
   }
