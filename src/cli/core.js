@@ -12,7 +12,6 @@ const core = yargs =>
         coerce: path.resolve,
         demandOption: true,
       })
-      .demandCommand()
       .strict()
       .help().alias('help', 'h')
       .version()
