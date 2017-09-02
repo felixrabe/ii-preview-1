@@ -66,8 +66,9 @@ SystemJS.config({
     "process": "npm:jspm-nodelibs-process@0.2.1",
     "react": "npm:react@16.0.0-beta.5",
     "react-dom": "npm:react-dom@next",
-    "react-draggable": "npm:react-draggable@3.0.2",
+    "react-draggable": "npm:react-draggable@3.0.3",
     "react-redux": "npm:react-redux@5.0.6",
+    "react-resizable": "npm:react-resizable@1.7.3",
     "react-router": "npm:react-router@4.2.0",
     "react-router-dom": "npm:react-router-dom@4.2.2",
     "stream": "npm:jspm-nodelibs-stream@0.2.1",
@@ -505,12 +506,6 @@ SystemJS.config({
         "resolve-pathname": "npm:resolve-pathname@2.2.0"
       }
     },
-    "npm:react-draggable@3.0.2": {
-      "map": {
-        "classnames": "npm:classnames@2.2.5",
-        "prop-types": "npm:prop-types@15.5.10"
-      }
-    },
     "npm:color@2.0.0": {
       "map": {
         "color-string": "npm:color-string@1.5.2",
@@ -541,6 +536,18 @@ SystemJS.config({
         "invariant": "npm:invariant@2.2.2",
         "lodash": "npm:lodash@4.17.4",
         "lodash-es": "npm:lodash-es@4.17.4"
+      }
+    },
+    "npm:react-resizable@1.7.3": {
+      "map": {
+        "prop-types": "npm:prop-types@15.5.10",
+        "react-draggable": "npm:react-draggable@3.0.3"
+      }
+    },
+    "npm:react-draggable@3.0.3": {
+      "map": {
+        "prop-types": "npm:prop-types@15.5.10",
+        "classnames": "npm:classnames@2.2.5"
       }
     }
   }

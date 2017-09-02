@@ -16,6 +16,7 @@
       "react-dom": "npm:react-dom@next",
       "react-draggable": "npm:react-draggable@^3.0.2",
       "react-redux": "npm:react-redux@^5.0.6",
+      "react-resizable": "npm:react-resizable@^1.7.3",
       "react-router": "npm:react-router@^4.2.0",
       "react-router-dom": "npm:react-router-dom@^4.2.2"
     },
@@ -71,6 +72,16 @@
       "npm:react-redux@5.0.6": {
         "peerDependencies": {
           "react": ">16.0.0-beta"
+        }
+      },
+      "npm:react-resizable@1.7.3": {
+        "peerDependencies": {
+          "react": ">16.0.0-beta"
+        },
+        "meta": {
+          "*.css": {
+            "loader": "css"
+          }
         }
       },
       "npm:safe-buffer@5.1.1": {
