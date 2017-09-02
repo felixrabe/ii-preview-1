@@ -15,6 +15,7 @@
       "css": "github:systemjs/plugin-css@^0.1.35",
       "react-dom": "npm:react-dom@next",
       "react-draggable": "npm:react-draggable@^3.0.2",
+      "react-grid-layout": "npm:react-grid-layout@^0.15.0",
       "react-redux": "npm:react-redux@^5.0.6",
       "react-resizable": "npm:react-resizable@^1.7.3",
       "react-router": "npm:react-router@^4.2.0",
@@ -68,6 +69,21 @@
       },
       "npm:pbkdf2@3.0.13": {
         "main": "browser.js"
+      },
+      "npm:react-grid-layout@0.15.0": {
+        "peerDependencies": {
+          "react": ">16.0.0-beta"
+        },
+        "meta": {
+          "*.css": {
+            "loader": "css"
+          },
+          "*.js": {
+            "globals": {
+              "process": "process"
+            }
+          }
+        }
       },
       "npm:react-redux@5.0.6": {
         "peerDependencies": {

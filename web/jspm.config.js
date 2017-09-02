@@ -67,6 +67,7 @@ SystemJS.config({
     "react": "npm:react@16.0.0-beta.5",
     "react-dom": "npm:react-dom@next",
     "react-draggable": "npm:react-draggable@3.0.3",
+    "react-grid-layout": "npm:react-grid-layout@0.15.0",
     "react-redux": "npm:react-redux@5.0.6",
     "react-resizable": "npm:react-resizable@1.7.3",
     "react-router": "npm:react-router@4.2.0",
@@ -548,6 +549,15 @@ SystemJS.config({
       "map": {
         "prop-types": "npm:prop-types@15.5.10",
         "classnames": "npm:classnames@2.2.5"
+      }
+    },
+    "npm:react-grid-layout@0.15.0": {
+      "map": {
+        "classnames": "npm:classnames@2.2.5",
+        "prop-types": "npm:prop-types@15.5.10",
+        "react-draggable": "npm:react-draggable@3.0.3",
+        "react-resizable": "npm:react-resizable@1.7.3",
+        "lodash.isequal": "npm:lodash.isequal@4.5.0"
       }
     }
   }
