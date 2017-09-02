@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@std/esm": "^0.7.1",
+    "babel-plugin-transform-react-jsx": "next",
+    "babel-preset-env": "next",
+    "babel-register": "next",
     "chalk": "^2.1.0",
     "connect": "^3.6.3",
     "intercept-stdout": "^0.1.2",
