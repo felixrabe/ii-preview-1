@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@std/esm": "^0.7.1",
+    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
     "babel-plugin-transform-react-jsx": "next",
     "babel-preset-env": "next",
     "babel-register": "next",

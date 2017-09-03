@@ -263,6 +263,10 @@ babel-plugin-syntax-jsx@7.0.0-alpha.20:
   version "7.0.0-alpha.20"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-7.0.0-alpha.20.tgz#039bb7f8db206b77e6770bf982cf806cf4eb8678"
 
+babel-plugin-syntax-object-rest-spread@^6.13.0:
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-object-rest-spread/-/babel-plugin-syntax-object-rest-spread-6.13.0.tgz#fd6536f2bce13836ffa3a5458c4903a597bb3bf5"
+
 babel-plugin-syntax-trailing-function-commas@7.0.0-alpha.20:
   version "7.0.0-alpha.20"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-trailing-function-commas/-/babel-plugin-syntax-trailing-function-commas-7.0.0-alpha.20.tgz#f56865239ecf2308e969b1fc0030cbb5816e52b1"
