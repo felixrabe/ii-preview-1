@@ -14,6 +14,7 @@
       "classnames": "npm:classnames@^2.2.5",
       "color": "npm:color@^2.0.0",
       "css": "github:systemjs/plugin-css@^0.1.35",
+      "lodash": "npm:lodash@^4.17.4",
       "react-dom": "npm:react-dom@next",
       "react-draggable": "npm:react-draggable@^3.0.2",
       "react-grid-layout": "npm:react-grid-layout@^0.15.0",
