@@ -25,7 +25,8 @@
       "react-router-dom": "npm:react-router-dom@^4.2.2",
       "redux": "npm:redux@^3.7.2",
       "redux-logger": "npm:redux-logger@^3.0.6",
-      "redux-thunk": "npm:redux-thunk@^2.2.0"
+      "redux-thunk": "npm:redux-thunk@^2.2.0",
+      "reselect": "npm:reselect@^3.0.1"
     },
     "devDependencies": {
       "plugin-babel": "npm:systemjs-plugin-babel@^0.0.25"

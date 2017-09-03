@@ -78,6 +78,7 @@ SystemJS.config({
     "redux": "npm:redux@3.7.2",
     "redux-logger": "npm:redux-logger@3.0.6",
     "redux-thunk": "npm:redux-thunk@2.2.0",
+    "reselect": "npm:reselect@3.0.1",
     "stream": "npm:jspm-nodelibs-stream@0.2.1",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.1",
     "url": "npm:jspm-nodelibs-url@0.2.1",
