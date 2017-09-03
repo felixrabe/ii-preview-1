@@ -66,6 +66,7 @@ SystemJS.config({
     "os": "npm:jspm-nodelibs-os@0.2.2",
     "path": "npm:jspm-nodelibs-path@0.2.3",
     "process": "npm:jspm-nodelibs-process@0.2.1",
+    "prop-types": "npm:prop-types@15.5.10",
     "react": "npm:react@16.0.0-beta.5",
     "react-dom": "npm:react-dom@next",
     "react-draggable": "npm:react-draggable@3.0.3",
