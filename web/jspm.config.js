@@ -75,6 +75,7 @@ SystemJS.config({
     "react-resizable": "npm:react-resizable@1.7.3",
     "react-router": "npm:react-router@4.2.0",
     "react-router-dom": "npm:react-router-dom@4.2.2",
+    "redux": "npm:redux@3.7.2",
     "stream": "npm:jspm-nodelibs-stream@0.2.1",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.1",
     "url": "npm:jspm-nodelibs-url@0.2.1",
@@ -561,6 +562,14 @@ SystemJS.config({
         "react-draggable": "npm:react-draggable@3.0.3",
         "react-resizable": "npm:react-resizable@1.7.3",
         "lodash.isequal": "npm:lodash.isequal@4.5.0"
+      }
+    },
+    "npm:redux@3.7.2": {
+      "map": {
+        "lodash": "npm:lodash@4.17.4",
+        "lodash-es": "npm:lodash-es@4.17.4",
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "symbol-observable": "npm:symbol-observable@1.0.4"
       }
     }
   }
