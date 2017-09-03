@@ -52,6 +52,7 @@ SystemJS.config({
     "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@6.24.1",
     "buffer": "npm:jspm-nodelibs-buffer@0.2.3",
     "child_process": "npm:jspm-nodelibs-child_process@0.2.1",
+    "classnames": "npm:classnames@2.2.5",
     "color": "npm:color@2.0.0",
     "constants": "npm:jspm-nodelibs-constants@0.2.1",
     "crypto": "npm:jspm-nodelibs-crypto@0.2.1",
