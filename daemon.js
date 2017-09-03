@@ -8,6 +8,7 @@ babelRegister({
   ],
   plugins: [
     'transform-react-jsx',
+    'syntax-object-rest-spread',
   ],
 })
 

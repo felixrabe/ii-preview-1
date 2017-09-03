@@ -5,8 +5,8 @@ const htmlTemplate = ({body}) => `<!DOCTYPE html>
   <title>ii</title>
   <base href="/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="_ii/src/core-client/system-font.css" />
-  <link rel="stylesheet" href="_ii/src/core-client/main.css" />
+  <link rel="stylesheet" href="_s/src/core-client/system-font.css" />
+  <link rel="stylesheet" href="_s/src/core-client/main.css" />
   <style>
     body.loading {
       pointer-events: none;
@@ -48,9 +48,9 @@ const htmlTemplate = ({body}) => `<!DOCTYPE html>
 <body class="loading">
   <div id="ii-root">${body || ''}</div>
   <div id="loading-root"><div>Loading...</div></div>
-  <script src="_ii/jspm_packages/system.js"></script>
-  <script>SystemJS.config({baseURL: '/_ii'})</script>
-  <script src="_ii/jspm.config.js"></script>
+  <script src="_s/jspm_packages/system.js"></script>
+  <script>SystemJS.config({baseURL: '/_s'})</script>
+  <script src="_s/jspm.config.js"></script>
   <script>
     (() => {
       'use strict'

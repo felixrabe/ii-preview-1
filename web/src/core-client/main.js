@@ -1,8 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 
+import actions from '../actions/index'
 import Body from '../components/Body.jsx'
+import store from '../store'
 import extendPromise from './dev-utils/js/extendPromise'
 import extendSystemJS from './dev-utils/js/extendSystemJS'
 
@@ -10,11 +13,23 @@ const main = async () => {
   extendPromise(Promise)
   extendSystemJS(SystemJS)  // IILoader
 
-  const iiRoot = document.getElementById('ii-root')
-  ReactDOM.hydrate(<BrowserRouter><Body loading /></BrowserRouter>, iiRoot)
-  ReactDOM.render(<BrowserRouter><Body /></BrowserRouter>, iiRoot)
+  SystemJS.import('../actions/index', __moduleName).let('actions')
+  SystemJS.import('../store', __moduleName).let('store')
 
-  document.body.classList.remove('loading')
+  const iiRoot = document.getElementById('ii-root')
+
+  ReactDOM.hydrate(
+    <Provider store={store}>
+      <BrowserRouter>
+        <Body />
+      </BrowserRouter>
+    </Provider>
+  , iiRoot)
+
+  store.subscribe(() => {
+    document.body.classList.toggle('loading', store.getState().isLoading)
+  })
+  store.dispatch(actions.setIsLoading(false))
   console.log('ii ready')
 }
 

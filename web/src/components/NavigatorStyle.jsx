@@ -2,6 +2,6 @@
 
 export const styleCSS = `
   .ii-navigator {
-
+    font-family: system-ui;
   }
 `

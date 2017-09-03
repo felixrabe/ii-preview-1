@@ -1,12 +1,20 @@
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
+import { Provider } from 'react-redux'
 import { StaticRouter } from 'react-router'
 
 import Body from '../components/Body'
+import createStore from '../createStore'
 
 const renderStatic = (ctx, req) => {
+  const store = createStore({server: true})
+
   return {body: ReactDOMServer.renderToString(
-    <StaticRouter context={ctx}><Body loading /></StaticRouter>
+    <Provider store={store}>
+      <StaticRouter context={ctx} location={req.url}>
+        <Body />
+      </StaticRouter>
+    </Provider>
   )}
 }
 
