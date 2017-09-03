@@ -76,6 +76,8 @@ SystemJS.config({
     "react-router": "npm:react-router@4.2.0",
     "react-router-dom": "npm:react-router-dom@4.2.2",
     "redux": "npm:redux@3.7.2",
+    "redux-logger": "npm:redux-logger@3.0.6",
+    "redux-thunk": "npm:redux-thunk@2.2.0",
     "stream": "npm:jspm-nodelibs-stream@0.2.1",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.1",
     "url": "npm:jspm-nodelibs-url@0.2.1",
@@ -570,6 +572,11 @@ SystemJS.config({
         "lodash-es": "npm:lodash-es@4.17.4",
         "loose-envify": "npm:loose-envify@1.3.1",
         "symbol-observable": "npm:symbol-observable@1.0.4"
+      }
+    },
+    "npm:redux-logger@3.0.6": {
+      "map": {
+        "deep-diff": "npm:deep-diff@0.3.8"
       }
     }
   }
