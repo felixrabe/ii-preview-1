@@ -14,6 +14,7 @@ const htmlTemplate = ({body}) => `<!DOCTYPE html>
     }
 
     #ii-root {
+      height: 100%;
       transition: filter 400ms;
     }
 
@@ -23,8 +24,8 @@ const htmlTemplate = ({body}) => `<!DOCTYPE html>
 
     #loading-root {
       align-items: center;
-      background-color: #d8d8d8;
-      color: #606060;
+      background-color: #d0d8e0;
+      color: #507090;
       display: flex;
       font-family: system-ui;
       font-size: 8vw;
