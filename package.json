@@ -17,6 +17,7 @@
     "babel-register": "next",
     "brace": "^0.10.0",
     "chalk": "^2.1.0",
+    "classnames": "^2.2.5",
     "color": "^2.0.0",
     "connect": "^3.6.3",
     "intercept-stdout": "^0.1.2",
