@@ -1,8 +1,13 @@
-exports.command = 'shutdown'
-exports.desc = ''
-exports.builder = () => {}
+const command = {
+  command: 'shutdown',
+  desc: '',
+  builder: () => {},
 
-exports.handler = (argv) => argv.awaitPs.push((async () => {
-  console.log('shutting down')
-  process.kill(process.pid, 'SIGINT')
-})())
+  handler: (argv) => argv.awaitPs.push((async () => {
+    console.log('shutting down')
+    process.kill(process.pid, 'SIGINT')
+  })()),
+}
+
+export const __useDefault = command
+export default __useDefault

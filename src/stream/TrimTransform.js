@@ -1,6 +1,6 @@
-import {Transform} from 'stream'
+import stream from 'stream'
 
-export default class TrimTransform extends Transform {
+export default class TrimTransform extends stream.Transform {
   constructor() {
     super({objectMode: true})
   }

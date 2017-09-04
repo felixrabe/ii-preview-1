@@ -1,6 +1,6 @@
-import {Transform} from 'stream'
+import stream from 'stream'
 
-export default class DelayTransform extends Transform {
+export default class DelayTransform extends stream.Transform {
   constructor(ms) {
     super({objectMode: true})
 

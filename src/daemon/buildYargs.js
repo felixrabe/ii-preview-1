@@ -1,7 +1,7 @@
 import yargs from 'yargs'
 
-const buildYargs = () => yargs()
-  .commandDir('commands')
-  .help()
+import commands from './commands'
+
+const buildYargs = async () => (await commands(yargs())).help()
 
 export default buildYargs

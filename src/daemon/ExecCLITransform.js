@@ -1,12 +1,10 @@
 // import chalk from 'chalk'
 import intercept from 'intercept-stdout'
-import {Transform} from 'stream'
+import stream from 'stream'
 
 import buildYargs from './buildYargs'
 
-const yargs = buildYargs()
-  .exitProcess(false)
-  .wrap(60)
+const yargsPromise = buildYargs().then(y => y.exitProcess(false).wrap(60))
 
 const processArgs = async (obj, logArray) => {
   if (!Array.isArray(obj)) {
@@ -15,11 +13,11 @@ const processArgs = async (obj, logArray) => {
   const awaitPs = []
   const wd = obj[0]
   // do not use process.chdir(), as multiple connections might be open
-  const args = yargs.parse(obj.slice(1), {awaitPs, wd})
+  const args = (await yargsPromise).parse(obj.slice(1), {awaitPs, wd})
   await Promise.all(awaitPs)
 }
 
-export default class ExecTransform extends Transform {
+export default class ExecTransform extends stream.Transform {
   constructor() {
     super({writableObjectMode: true})
   }

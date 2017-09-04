@@ -1,7 +1,8 @@
 SystemJS.config({
   paths: {
     "npm:": "jspm_packages/npm/",
-    "ii/": "src/"
+    "ii-1/": "src/",
+    "ii/": "web/"
   },
   browserConfig: {
     "baseURL": "/"
@@ -13,11 +14,28 @@ SystemJS.config({
   },
   transpiler: "plugin-babel",
   packages: {
-    "ii": {
-      "main": "ii.js",
+    "ii-1": {
+      "format": "esm",
       "meta": {
         "*.js": {
           "loader": "plugin-babel"
+        }
+      }
+    },
+    "ii": {
+      "format": "esm",
+      "meta": {
+        "*.css": {
+          "loader": "css"
+        },
+        "*.js": {
+          "loader": "plugin-babel",
+          "babelOptions": {
+            "es2015": false,
+            "plugins": [
+              "babel-plugin-transform-react-jsx"
+            ]
+          }
         }
       }
     }

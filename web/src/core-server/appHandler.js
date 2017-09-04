@@ -1,5 +1,5 @@
 import htmlTemplate from './htmlTemplate'
-import renderStatic from './renderStatic.jsx'
+import renderStatic from './renderStatic'
 
 const appHandler = (req, res) => {
   const context = {}

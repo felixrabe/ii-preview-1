@@ -1,6 +1,6 @@
-import {Transform} from 'stream'
+import stream from 'stream'
 
-export default class DebugTransform extends Transform {
+export default class DebugTransform extends stream.Transform {
   constructor() {
     super({objectMode: true})
     this.push('D>\n')

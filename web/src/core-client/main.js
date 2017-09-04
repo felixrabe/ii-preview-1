@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 
 import actions from '../actions/index'
-import Body from '../components/Body.jsx'
+import Body from '../components/Body'
 import store from '../store'
 import extendPromise from './dev-utils/js/extendPromise'
 import extendSystemJS from './dev-utils/js/extendSystemJS'

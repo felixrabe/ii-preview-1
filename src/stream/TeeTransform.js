@@ -1,6 +1,6 @@
-import {Transform} from 'stream'
+import stream from 'stream'
 
-export default class ToStringTransform extends Transform {
+export default class ToStringTransform extends stream.Transform {
   constructor(other) {
     super({objectMode: true})
 
