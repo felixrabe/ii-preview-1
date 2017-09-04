@@ -50,19 +50,7 @@ const htmlTemplate = ({body}) => `<!DOCTYPE html>
   <div id="ii-root">${body || ''}</div>
   <div id="loading-root"><div>Loading...</div></div>
   <script src="_s/jspm_packages/system.js"></script>
-  <script>SystemJS.config({baseURL: '/_s'})</script>
-  <script src="_s/jspm.config.js"></script>
-  <script>
-    (() => {
-      'use strict'
-
-      self.IILoader = self.SystemJS
-      delete self.System
-      delete self.SystemJS
-
-      self.IILoader.import('ii/core-client/main').then(main => main())
-    })()
-  </script>
+  <script>SystemJS.import('/_s/src/core-client/bootstrap.js')</script>
 </body>
 </html>
 `

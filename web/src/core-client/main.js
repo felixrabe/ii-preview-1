@@ -9,7 +9,9 @@ import store from '../store'
 import extendPromise from './dev-utils/js/extendPromise'
 import extendSystemJS from './dev-utils/js/extendSystemJS'
 
-const main = async () => {
+const main = async ({self}) => {
+  self.IILoader = SystemJS
+
   extendPromise(Promise)
   extendSystemJS(SystemJS)  // IILoader
 
