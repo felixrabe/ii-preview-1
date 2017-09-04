@@ -23,6 +23,7 @@
     "multipipe": "^1.0.2",
     "nodemon": "^1.11.0",
     "react": "next",
+    "react-ace": "^5.2.0",
     "react-dom": "next",
     "react-draggable": "^3.0.3",
     "react-redux": "^5.0.6",
