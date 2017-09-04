@@ -9,7 +9,7 @@ import store from '../store'
 import extendPromise from './dev-utils/js/extendPromise'
 import extendSystemJS from './dev-utils/js/extendSystemJS'
 
-const main = async ({self}) => {
+const main = async ({self, isReloading = false} = {}) => {
   self.IILoader = SystemJS
 
   extendPromise(Promise)
@@ -26,7 +26,11 @@ const main = async ({self}) => {
     </Provider>
   const iiRoot = document.getElementById('ii-root')
 
-  ReactDOM.hydrate(iiElem, iiRoot)
+  if (isReloading) {
+    ReactDOM.render(null, iiRoot)
+  } else {
+    ReactDOM.hydrate(iiElem, iiRoot)
+  }
   store.dispatch(actions.setEnv({inBrowser: true, inNode: false}))
   ReactDOM.render(iiElem, iiRoot)
 

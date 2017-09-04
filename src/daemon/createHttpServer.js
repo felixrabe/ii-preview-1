@@ -4,18 +4,20 @@ import path from 'path'
 import serveStatic from 'serve-static'
 
 import apiHandlerFactory from '../../web/src/core-server/apiHandlerFactory'
-import appHandler from '../../web/src/core-server/appHandler'
 import config from './config'
 import log from './log'
+import {reloadingHttpHandler} from './reloadingHttpHandler'
 
 const webRoot = path.join(__dirname, '..', '..', 'web')
+
+const mainHandler = (req, res) => reloadingHttpHandler(req, res)
 
 const createHttpServer = () => {
   const app = connect()
 
   app.use('/_i', apiHandlerFactory(config))
   app.use('/_s', serveStatic(webRoot, {index: false}))
-  app.use(appHandler)
+  app.use(mainHandler)
 
   return new http.Server(app).listen(config.port, config.host, () => {
     log(`Listening on 'localhost:${config.port}'`)
