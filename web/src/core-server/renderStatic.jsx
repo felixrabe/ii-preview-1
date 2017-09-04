@@ -7,7 +7,7 @@ import Body from '../components/Body'
 import createStore from '../createStore'
 
 const renderStatic = (ctx, req) => {
-  const store = createStore({server: true})
+  const store = createStore({inBrowser: false, inNode: true})
 
   return {body: ReactDOMServer.renderToString(
     <Provider store={store}>

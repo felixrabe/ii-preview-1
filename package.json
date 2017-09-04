@@ -4,7 +4,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "node ./script/build.js"
+    "build": "node ./script/build.js",
+    "dev": "./script/dev.sh"
   },
   "bin": {
     "ii-1-daemon": "./daemon.js"

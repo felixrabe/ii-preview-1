@@ -16,15 +16,17 @@ const main = async () => {
   SystemJS.import('../actions/index', __moduleName).let('actions')
   SystemJS.import('../store', __moduleName).let('store')
 
-  const iiRoot = document.getElementById('ii-root')
-
-  ReactDOM.hydrate(
+  const iiElem =
     <Provider store={store}>
       <BrowserRouter>
         <Body />
       </BrowserRouter>
     </Provider>
-  , iiRoot)
+  const iiRoot = document.getElementById('ii-root')
+
+  ReactDOM.hydrate(iiElem, iiRoot)
+  store.dispatch(actions.setEnv({inBrowser: true, inNode: false}))
+  ReactDOM.render(iiElem, iiRoot)
 
   store.subscribe(() => {
     document.body.classList.toggle('loading', store.getState().isLoading)

@@ -29,6 +29,9 @@ createAction('load path', async ({dispatch, getState}, path) => {
 
 createAction('load path request', (path) => ({path}))
 
+createAction('set env',
+  ({inBrowser = undefined, inNode = undefined}) => ({inBrowser, inNode})
+)
 createAction('set is loading', (isLoading) => ({isLoading}))
 createAction('set path data', (path, data) => ({path, data}))
 createAction('set path is loading', (path, isLoading) => ({path, isLoading}))
