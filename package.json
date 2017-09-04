@@ -20,6 +20,7 @@
     "color": "^2.0.0",
     "connect": "^3.6.3",
     "intercept-stdout": "^0.1.2",
+    "jspm": "beta",
     "mkdirp": "^0.5.1",
     "multipipe": "^1.0.2",
     "nodemon": "^1.11.0",
