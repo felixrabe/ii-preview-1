@@ -12,7 +12,6 @@ SystemJS.config({
   transpiler: "plugin-babel",
   packages: {
     "ii": {
-      "main": "ii.js",
       "format": "esm",
       "meta": {
         "*.css": {
