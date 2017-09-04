@@ -50,6 +50,7 @@ SystemJS.config({
   map: {
     "assert": "npm:jspm-nodelibs-assert@0.2.1",
     "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@6.24.1",
+    "brace": "npm:brace@0.10.0",
     "buffer": "npm:jspm-nodelibs-buffer@0.2.3",
     "child_process": "npm:jspm-nodelibs-child_process@0.2.1",
     "classnames": "npm:classnames@2.2.5",
