@@ -68,6 +68,7 @@ SystemJS.config({
     "process": "npm:jspm-nodelibs-process@0.2.1",
     "prop-types": "npm:prop-types@15.5.10",
     "react": "npm:react@16.0.0-beta.5",
+    "react-ace": "npm:react-ace@5.2.0",
     "react-dom": "npm:react-dom@next",
     "react-draggable": "npm:react-draggable@3.0.3",
     "react-grid-layout": "npm:react-grid-layout@0.15.0",
@@ -75,12 +76,14 @@ SystemJS.config({
     "react-resizable": "npm:react-resizable@1.7.3",
     "react-router": "npm:react-router@4.2.0",
     "react-router-dom": "npm:react-router-dom@4.2.2",
+    "readline": "npm:jspm-nodelibs-readline@0.2.1",
     "redux": "npm:redux@3.7.2",
     "redux-logger": "npm:redux-logger@3.0.6",
     "redux-thunk": "npm:redux-thunk@2.2.0",
     "reselect": "npm:reselect@3.0.1",
     "stream": "npm:jspm-nodelibs-stream@0.2.1",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.1",
+    "tty": "npm:jspm-nodelibs-tty@0.2.1",
     "url": "npm:jspm-nodelibs-url@0.2.1",
     "util": "npm:jspm-nodelibs-util@0.2.2",
     "vm": "npm:jspm-nodelibs-vm@0.2.1",
@@ -137,14 +140,8 @@ SystemJS.config({
     },
     "npm:isomorphic-fetch@2.2.1": {
       "map": {
-        "node-fetch": "npm:node-fetch@1.7.2",
+        "node-fetch": "npm:node-fetch@1.6.3",
         "whatwg-fetch": "npm:whatwg-fetch@2.0.3"
-      }
-    },
-    "npm:node-fetch@1.7.2": {
-      "map": {
-        "is-stream": "npm:is-stream@1.1.0",
-        "encoding": "npm:encoding@0.1.12"
       }
     },
     "npm:stream-browserify@2.0.1": {
@@ -450,7 +447,7 @@ SystemJS.config({
     },
     "npm:babel-runtime@6.26.0": {
       "map": {
-        "core-js": "npm:core-js@2.5.0",
+        "core-js": "npm:core-js@2.5.1",
         "regenerator-runtime": "npm:regenerator-runtime@0.11.0"
       }
     },
@@ -578,6 +575,139 @@ SystemJS.config({
     "npm:redux-logger@3.0.6": {
       "map": {
         "deep-diff": "npm:deep-diff@0.3.8"
+      }
+    },
+    "npm:react-ace@5.2.0": {
+      "map": {
+        "prop-types": "npm:prop-types@15.5.10",
+        "lodash.isequal": "npm:lodash.isequal@4.5.0",
+        "opencollective": "npm:opencollective@1.0.3",
+        "lodash.get": "npm:lodash.get@4.4.2",
+        "brace": "npm:brace@0.10.0"
+      }
+    },
+    "npm:opencollective@1.0.3": {
+      "map": {
+        "minimist": "npm:minimist@1.2.0",
+        "inquirer": "npm:inquirer@3.0.6",
+        "chalk": "npm:chalk@1.1.3",
+        "node-fetch": "npm:node-fetch@1.6.3",
+        "opn": "npm:opn@4.0.2",
+        "babel-polyfill": "npm:babel-polyfill@6.23.0"
+      }
+    },
+    "npm:inquirer@3.0.6": {
+      "map": {
+        "chalk": "npm:chalk@1.1.3",
+        "cli-cursor": "npm:cli-cursor@2.1.0",
+        "mute-stream": "npm:mute-stream@0.0.7",
+        "cli-width": "npm:cli-width@2.2.0",
+        "run-async": "npm:run-async@2.3.0",
+        "figures": "npm:figures@2.0.0",
+        "strip-ansi": "npm:strip-ansi@3.0.1",
+        "through": "npm:through@2.3.8",
+        "string-width": "npm:string-width@2.1.1",
+        "ansi-escapes": "npm:ansi-escapes@1.4.0",
+        "external-editor": "npm:external-editor@2.0.4",
+        "lodash": "npm:lodash@4.17.4",
+        "rx": "npm:rx@4.1.0"
+      }
+    },
+    "npm:opn@4.0.2": {
+      "map": {
+        "object-assign": "npm:object-assign@4.1.1",
+        "pinkie-promise": "npm:pinkie-promise@2.0.1"
+      }
+    },
+    "npm:brace@0.10.0": {
+      "map": {
+        "w3c-blob": "npm:w3c-blob@0.0.1"
+      }
+    },
+    "npm:chalk@1.1.3": {
+      "map": {
+        "strip-ansi": "npm:strip-ansi@3.0.1",
+        "ansi-styles": "npm:ansi-styles@2.2.1",
+        "escape-string-regexp": "npm:escape-string-regexp@1.0.5",
+        "has-ansi": "npm:has-ansi@2.0.0",
+        "supports-color": "npm:supports-color@2.0.0"
+      }
+    },
+    "npm:babel-polyfill@6.23.0": {
+      "map": {
+        "regenerator-runtime": "npm:regenerator-runtime@0.10.5",
+        "babel-runtime": "npm:babel-runtime@6.26.0",
+        "core-js": "npm:core-js@2.5.1"
+      }
+    },
+    "npm:node-fetch@1.6.3": {
+      "map": {
+        "is-stream": "npm:is-stream@1.1.0",
+        "encoding": "npm:encoding@0.1.12"
+      }
+    },
+    "npm:string-width@2.1.1": {
+      "map": {
+        "strip-ansi": "npm:strip-ansi@4.0.0",
+        "is-fullwidth-code-point": "npm:is-fullwidth-code-point@2.0.0"
+      }
+    },
+    "npm:figures@2.0.0": {
+      "map": {
+        "escape-string-regexp": "npm:escape-string-regexp@1.0.5"
+      }
+    },
+    "npm:run-async@2.3.0": {
+      "map": {
+        "is-promise": "npm:is-promise@2.1.0"
+      }
+    },
+    "npm:external-editor@2.0.4": {
+      "map": {
+        "tmp": "npm:tmp@0.0.31",
+        "iconv-lite": "npm:iconv-lite@0.4.18",
+        "jschardet": "npm:jschardet@1.5.1"
+      }
+    },
+    "npm:cli-cursor@2.1.0": {
+      "map": {
+        "restore-cursor": "npm:restore-cursor@2.0.0"
+      }
+    },
+    "npm:strip-ansi@3.0.1": {
+      "map": {
+        "ansi-regex": "npm:ansi-regex@2.1.1"
+      }
+    },
+    "npm:has-ansi@2.0.0": {
+      "map": {
+        "ansi-regex": "npm:ansi-regex@2.1.1"
+      }
+    },
+    "npm:pinkie-promise@2.0.1": {
+      "map": {
+        "pinkie": "npm:pinkie@2.0.4"
+      }
+    },
+    "npm:strip-ansi@4.0.0": {
+      "map": {
+        "ansi-regex": "npm:ansi-regex@3.0.0"
+      }
+    },
+    "npm:tmp@0.0.31": {
+      "map": {
+        "os-tmpdir": "npm:os-tmpdir@1.0.2"
+      }
+    },
+    "npm:restore-cursor@2.0.0": {
+      "map": {
+        "onetime": "npm:onetime@2.0.1",
+        "signal-exit": "npm:signal-exit@3.0.2"
+      }
+    },
+    "npm:onetime@2.0.1": {
+      "map": {
+        "mimic-fn": "npm:mimic-fn@1.1.0"
       }
     }
   }
