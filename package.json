@@ -15,6 +15,7 @@
     "babel-plugin-transform-react-jsx": "next",
     "babel-preset-env": "next",
     "babel-register": "next",
+    "brace": "^0.10.0",
     "chalk": "^2.1.0",
     "color": "^2.0.0",
     "connect": "^3.6.3",
