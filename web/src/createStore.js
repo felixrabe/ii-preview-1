@@ -9,7 +9,7 @@ const createStore = (initialState = {}) => (
     mainReducerFactory(initialState),
     Redux.applyMiddleware(
       reduxThunk,
-      reduxLogger,
+      // reduxLogger,
     ),
   )
 )
