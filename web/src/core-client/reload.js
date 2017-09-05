@@ -11,7 +11,7 @@ const reload = async ({nested = false} = {}) => {
     return reload({nested: true})
   }
   console.clear()
-  console.group('reload')
+  console.groupCollapsed('Reload')
   try {
     const prefix = SystemJS.resolveSync('ii')
     ;([...SystemJS.registry.keys()])

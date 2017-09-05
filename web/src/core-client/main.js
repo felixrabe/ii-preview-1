@@ -38,7 +38,7 @@ const main = async ({self, isReloading = false} = {}) => {
     document.body.classList.toggle('loading', store.getState().isLoading)
   })
   store.dispatch(actions.setIsLoading(false))
-  console.log('ii ready')
+  // console.log('ii ready')
 }
 
 export const __useDefault = main
