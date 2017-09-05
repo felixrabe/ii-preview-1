@@ -1,6 +1,6 @@
-import {Transform} from 'stream'
+import stream from 'stream'
 
-export default class ObjToJSONTransform extends Transform {
+export default class ObjToJSONTransform extends stream.Transform {
   constructor() {
     super({writableObjectMode: true})
   }

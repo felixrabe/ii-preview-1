@@ -1,6 +1,6 @@
-import {Transform} from 'stream'
+import stream from 'stream'
 
-export default class InLinesTransform extends Transform {
+export default class InLinesTransform extends stream.Transform {
   constructor() {
     super()
     this.buffer = ''

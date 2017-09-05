@@ -1,16 +1,14 @@
 #!/usr/bin/env node
 
-const babelRegister = require('babel-register').default
+const fs = require('fs')
+const path = require('path')
+const SystemJS = require('systemjs')
 
-babelRegister({
-  presets: [
-    [ 'env', {targets: {node: 'current'}} ]
-  ],
-  plugins: [
-    'transform-react-jsx',
-    'syntax-object-rest-spread',
-  ],
-})
+const main = async () => {
+  // SystemJS.config({baseURL: __dirname})
+  await SystemJS.import('jspm.config.js')
+  await SystemJS.import('systemjs.config.js')
+  await SystemJS.import('ii-1/daemon')
+}
 
-require = require('@std/esm')(module)
-module.exports = require('./src/daemon').default
+main().catch(err => console.error(err))

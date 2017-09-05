@@ -1,7 +1,12 @@
-exports.command = 'debug'
-exports.desc = 'foo that'
-exports.builder = () => {}
+const command = {
+  command: 'debug',
+  desc: 'foo that',
+  builder: () => {},
 
-exports.handler = (argv) => argv.awaitPs.push((async () => {
-  console.log(argv)
-})())
+  handler: (argv) => argv.awaitPs.push((async () => {
+    console.log(argv)
+  })()),
+}
+
+export const __useDefault = command
+export default __useDefault

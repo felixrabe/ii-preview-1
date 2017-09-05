@@ -1,7 +1,7 @@
 import fs from 'fs'
 import mkdirp from 'mkdirp'
 import path from 'path'
-import { URL } from 'url'
+import url_ from 'url'
 import util from 'util'
 
 const readdirPromise = util.promisify(fs.readdir)
@@ -38,7 +38,7 @@ const apiHandler = async ({url}, req, res) => {
 const apiHandlerFactory = (config) => {
   const base = `http://${config.host}:${config.port}`
   return (req, res) => {
-    const url = new URL(req.url, base)
+    const url = new url_.URL(req.url, base)
     return apiHandler({base, url}, req, res)
   }
 }

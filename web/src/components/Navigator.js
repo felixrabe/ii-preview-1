@@ -5,8 +5,8 @@ import {connect} from 'react-redux'
 import {Link, Route} from 'react-router-dom'
 
 import actions from '../actions/index'
-import autokey from './autokey.jsx'
-import {styleCSS} from './NavigatorStyle.jsx'
+import autokey from './autokey'
+import {styleCSS} from './NavigatorStyle'
 
 const connector = connect(
   (state, ownProps) => ({

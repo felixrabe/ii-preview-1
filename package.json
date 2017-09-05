@@ -11,16 +11,18 @@
     "ii-1-daemon": "./daemon.js"
   },
   "dependencies": {
-    "@std/esm": "^0.7.1",
     "babel-plugin-syntax-object-rest-spread": "^6.13.0",
     "babel-plugin-transform-react-jsx": "next",
     "babel-preset-env": "next",
     "babel-register": "next",
     "brace": "^0.10.0",
     "chalk": "^2.1.0",
+    "classnames": "^2.2.5",
     "color": "^2.0.0",
     "connect": "^3.6.3",
     "intercept-stdout": "^0.1.2",
+    "jspm": "beta",
+    "lodash": "^4.17.4",
     "mkdirp": "^0.5.1",
     "multipipe": "^1.0.2",
     "nodemon": "^1.11.0",
@@ -37,10 +39,16 @@
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1",
     "serve-static": "^1.12.4",
+    "systemjs": "^0.20.18",
+    "systemjs-plugin-babel": "^0.0.25",
     "yargs": "^8.0.2"
   },
-  "@std/esm": {
-    "esm": "js",
-    "cjs": true
+  "jspm": {
+    "name": "ii",
+    "main": "ii.js",
+    "dependencies": {},
+    "devDependencies": {
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.25"
+    }
   }
 }

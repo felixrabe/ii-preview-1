@@ -1,11 +1,11 @@
 import classNames from 'classnames'
 import React from 'react'
 
-import AceSafelyWrapped from './AceSafelyWrapped.jsx'
-import autokey from './autokey.jsx'
-import {styleCSS} from './BodyStyle.jsx'
-import Navigator from './Navigator.jsx'
-import Reloader from './Reloader.jsx'
+import AceSafelyWrapped from './AceSafelyWrapped'
+import autokey from './autokey'
+import {styleCSS} from './BodyStyle'
+import Navigator from './Navigator'
+import Reloader from './Reloader'
 
 class Body extends React.Component {
   render() {
@@ -17,7 +17,7 @@ class Body extends React.Component {
       <div className={className}>
         <Reloader />
         <div>
-          Between 2
+          Between 7
         </div>
         <Navigator />
       </div>,

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 
 import actions from '../actions/index'
-import autokey from './autokey.jsx'
+import autokey from './autokey'
 
 class Reloader extends React.Component {
   constructor(props) {

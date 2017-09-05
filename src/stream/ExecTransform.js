@@ -1,7 +1,7 @@
-import {Transform} from 'stream'
+import stream from 'stream'
 import vm from 'vm'
 
-export default class ExecTransform extends Transform {
+export default class ExecTransform extends stream.Transform {
   constructor() {
     super({readableObjectMode: true})
   }
