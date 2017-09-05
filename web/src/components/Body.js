@@ -16,9 +16,6 @@ class Body extends React.Component {
       <style>{styleCSS}</style>,
       <div className={className}>
         <Reloader />
-        <div>
-          Between 7
-        </div>
         <Navigator />
       </div>,
     ])
