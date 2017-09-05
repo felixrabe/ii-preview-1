@@ -40,9 +40,5 @@
     "systemjs": "^0.20.18",
     "systemjs-plugin-babel": "^0.0.25",
     "yargs": "^8.0.2"
-  },
-  "@std/esm": {
-    "esm": "js",
-    "cjs": true
   }
 }
