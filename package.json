@@ -9,5 +9,8 @@
   },
   "bin": {
     "ii-1-daemon": "./daemon.js"
+  },
+  "dependencies": {
+    "jspm": "beta"
   }
 }
