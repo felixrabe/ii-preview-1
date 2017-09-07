@@ -1,10 +1,11 @@
 // import chalk from 'chalk'
 import intercept from 'intercept-stdout'
 import stream from 'stream'
+import yargs from 'yargs'
 
-import buildYargs from './buildYargs'
+import commands from './commands'
 
-const yargsPromise = buildYargs().then(y => y.exitProcess(false).wrap(60))
+const yargsPromise = commands(yargs()).then(y => y.help().exitProcess(false).wrap(60))
 
 const processArgs = async (obj, logArray) => {
   if (!Array.isArray(obj)) {

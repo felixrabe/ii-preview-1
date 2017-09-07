@@ -2,9 +2,9 @@ import fs from 'fs'
 import path from 'path'
 import url from 'url'
 
-import appHandler from '../../web/src/core-server/appHandler'
+// import appHandler from '../web/core-server/appHandler'
 
-const webPrefix = new url.URL('../../web/src', __moduleName)
+const srcPrefix = new url.URL('..', __moduleName)
 const waitMS = 500
 const reloadedAt = Date.now()
 let handlerPromise = null
@@ -16,7 +16,8 @@ export let reloadingHttpHandler = async (req, res) => {
       fresh = false
       console.log('New HTTP handler ready')
     }
-    return appHandler(req, res)
+    // return appHandler(req, res)
+    return res.end()
   }
 
   if (handlerPromise) return (await handlerPromise)(req, res)
@@ -27,7 +28,7 @@ export let reloadingHttpHandler = async (req, res) => {
 
   SystemJS.registry.delete(__moduleName)
   ;[...SystemJS.registry.keys()]
-    .filter(k => k.startsWith(webPrefix))
+    .filter(k => k.startsWith(srcPrefix))
     .forEach(k => {
       console.log('  x:', k)
       SystemJS.registry.delete(k)
@@ -39,4 +40,4 @@ export let reloadingHttpHandler = async (req, res) => {
   return reloadingHttpHandler(req, res)
 }
 
-export default reloadingHttpHandler
+// export default reloadingHttpHandler

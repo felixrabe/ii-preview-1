@@ -5,7 +5,7 @@ import path from 'path'
 import serveStatic from 'serve-static'
 import url from 'url'
 
-import apiHandlerFactory from '../../web/src/core-server/apiHandlerFactory'
+// import apiHandlerFactory from '../../web/src/core-server/apiHandlerFactory'
 import config from './config'
 import log from './log'
 import {reloadingHttpHandler} from './reloadingHttpHandler'
@@ -19,7 +19,7 @@ const mainHandler = (req, res) => reloadingHttpHandler(req, res)
 const createHttpServer = () => {
   const app = connect()
 
-  app.use('/_i', apiHandlerFactory(config))
+  // app.use('/_i', apiHandlerFactory(config))
   app.use('/_s', serveStatic(webRoot, {index: false}))
   app.use(mainHandler)
 
