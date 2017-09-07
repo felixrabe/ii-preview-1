@@ -10,3 +10,5 @@ await Promise.all([
   load('./reloader'),
   load('./base.css'),
 ])
+
+;(await load('./extendPromise'))(Promise)

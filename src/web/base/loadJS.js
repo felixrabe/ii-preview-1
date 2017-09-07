@@ -1,6 +1,8 @@
 (() => {
 'use strict'
 
+const defaultArgs = {}
+
 const join = (...pp) => {
   const raw = pp.map(p => '/' + p + '/').join('')
     .replace(/\/+/g, '/').split('/').slice(1, -1)
@@ -59,11 +61,11 @@ self._loadRel = ({args, base, baseName, path, transform}) => {
 
 const transform = async ({code, ...evalArgs}) => {
   code = `return (async () => {'use strict';\n${code}\n;})()`
-  evalArgs.load = (path, args = {}) => self._loadRel(
+  evalArgs.load = (path, args = defaultArgs) => self._loadRel(
     {args, baseName: evalArgs.__moduleName, path, transform}
   )
   evalArgs.load.registry = registry
-  // meagre UMD support (https://github.com/ForbesLindesay/umd/blob/master/template.js)
+  // minimal UMD support (https://github.com/ForbesLindesay/umd/blob/master/template.js)
   evalArgs.module = {exports: {}}
   evalArgs.exports = evalArgs.module.exports
   try {
@@ -79,7 +81,9 @@ const transform = async ({code, ...evalArgs}) => {
   }
 }
 
-self.load = (path) => self._loadRel({base: '', path, transform})
+self.load = (path, args = defaultArgs) => self._loadRel(
+  {args, base: '', path, transform}
+)
 self.load.registry = registry
 
 const meSrc = [...document.getElementsByTagName('script')].pop().src

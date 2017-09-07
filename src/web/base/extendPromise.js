@@ -8,5 +8,4 @@ const extendPromise = (Promise) => {
   Promise.prototype.q = function () { return undefined }
 }
 
-export const __useDefault = extendPromise
-export default __useDefault
+return extendPromise
