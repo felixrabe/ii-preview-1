@@ -1,8 +1,8 @@
 import fs from 'fs'
 import net from 'net'
 
-import config from './config'
-import log from './log'
+import config from '../config'
+import log from '../util/log'
 
 // eslint-disable-next-line no-unused-vars
 const errHandler = (socket) => (err) => {

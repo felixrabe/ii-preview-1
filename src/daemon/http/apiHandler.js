@@ -4,6 +4,8 @@ import path from 'path'
 import url_ from 'url'
 import util from 'util'
 
+import config from '../config'
+
 const readdirPromise = util.promisify(fs.readdir)
 const mkdirpPromise = util.promisify(mkdirp)
 
@@ -15,8 +17,10 @@ const analyze = (o) => ({
 
 const sandbox = '/tmp/ii-sandbox'
 
-const apiHandler = async ({url}, req, res) => {
-  // await new Promise(r => setTimeout(r, 500))
+const base = `http://${config.httpHost}:${config.httpPort}`
+
+const apiHandler = async (req, res) => {
+  const url = new url_.URL(req.url, base)
   const absPath = path.resolve(sandbox, '.' + url.pathname)
   let result
   try {
@@ -35,12 +39,4 @@ const apiHandler = async ({url}, req, res) => {
   res.end(result)
 }
 
-const apiHandlerFactory = (config) => {
-  const base = `http://${config.host}:${config.port}`
-  return (req, res) => {
-    const url = new url_.URL(req.url, base)
-    return apiHandler({base, url}, req, res)
-  }
-}
-
-export default apiHandlerFactory
+export default apiHandler

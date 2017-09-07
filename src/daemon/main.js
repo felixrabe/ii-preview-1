@@ -1,12 +1,12 @@
 import fs from 'fs'
 import multipipe from 'multipipe'
 
-import InLinesTransform from '../stream/InLinesTransform'
-import JSONToObjTransform from '../stream/JSONToObjTransform'
 import config from './config'
-import createSockServer from './createSockServer'
 import createHttpServer from './createHttpServer'
+import createSockServer from './socket/server'
 import ExecCLITransform from './ExecCLITransform'
+import InLinesTransform from './stream/InLinesTransform'
+import JSONToObjTransform from './stream/JSONToObjTransform'
 
 const makeStream = () => multipipe(
   new InLinesTransform(),

@@ -5,8 +5,8 @@ import path from 'path'
 const config = {}
 export default config
 
-config.host = 'localhost'
-config.port = 10080
+config.httpHost = 'localhost'
+config.httpPort = 10080
 
 config.paths = {}
 
