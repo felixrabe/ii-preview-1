@@ -12,5 +12,13 @@
   },
   "dependencies": {
     "jspm": "beta"
+  },
+  "jspm": {
+    "name": "ii",
+    "main": "ii.js",
+    "dependencies": {},
+    "devDependencies": {
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.25"
+    }
   }
 }
