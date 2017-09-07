@@ -10,8 +10,8 @@ import log from '../util/log'
 import apiHandler from './apiHandler'
 import {reloadingHttpHandler} from './reloadingHttpHandler'
 
-const srvPath = (pp) => path.join(appRoot, ...pp)
-const srv = (...pp) => serveStatic(srvPath(pp), {index: false})
+const srcPath = path.join(appRoot, 'src')
+const serveStaticAt = (p) => serveStatic(p, {index: false})
 
 const mainHandler = (req, res) => reloadingHttpHandler(req, res)
 
@@ -19,8 +19,9 @@ const createHttpServer = () => {
   const app = connect()
 
   app.use('/_i', apiHandler)
-  app.use('/_j', srv('jspm_packages'))
-  app.use('/_n', srv('node_modules'))
+  app.use('/_j', serveStaticAt(path.join(appRoot, 'jspm_packages')))
+  app.use('/_n', serveStaticAt(path.join(appRoot, 'node_modules')))
+  app.use('/_w', serveStaticAt(path.join(srcPath, 'web')))
   app.use(mainHandler)
 
   const server = new http.Server(app)

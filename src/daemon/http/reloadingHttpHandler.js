@@ -2,10 +2,10 @@ import fs from 'fs'
 import path from 'path'
 import url from 'url'
 
-import appHandler from './appHandler'
+import indexHtmlHandler from './indexHtmlHandler'
 
 const srcPrefix = new url.URL('../..', __moduleName)
-const waitMS = 500
+const waitMS = 2000
 const reloadedAt = Date.now()
 let handlerPromise = null
 let fresh = true
@@ -16,7 +16,7 @@ export let reloadingHttpHandler = async (req, res) => {
       fresh = false
       console.log('New HTTP handler ready')
     }
-    return appHandler(req, res)
+    return indexHtmlHandler(req, res)
   }
 
   if (handlerPromise) return (await handlerPromise)(req, res)
