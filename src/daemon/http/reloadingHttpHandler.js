@@ -30,7 +30,7 @@ export let reloadingHttpHandler = async (req, res) => {
   ;[...SystemJS.registry.keys()]
     .filter(k => k.startsWith(srcPrefix))
     .forEach(k => {
-      console.log('  x:', k)
+      // console.log('  x:', k)
       SystemJS.registry.delete(k)
     })
 
