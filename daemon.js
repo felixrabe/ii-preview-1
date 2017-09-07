@@ -1,11 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs')
-const path = require('path')
-const SystemJS = require('systemjs')
-
 const main = async () => {
-  // SystemJS.config({baseURL: __dirname})
+  const SystemJS = require('systemjs')
   await SystemJS.import('jspm.config.js')
   await SystemJS.import('systemjs.config.js')
   await SystemJS.import('ii-1/daemon')

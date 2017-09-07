@@ -3,4 +3,7 @@
 cd "$DIR/.."
 CMD pwd
 
-CMD_STR 'rm -rf .esm-cache node_modules/.cache node_modules web/node_modules web/jspm_packages && yarn && (cd web && yarn && yarn jspm -- install)'
+CMD rm -rf jspm_packages
+CMD rm -rf node_modules
+CMD yarn
+CMD yarn jspm -- install

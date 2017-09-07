@@ -14,8 +14,8 @@ const execSync = (...args) => {
   })
 }
 
-chdir('go-client', 'ii-1')
-execSync('go', 'build')
-chdir('web')
+chdir()
 execSync('yarn')
 execSync('yarn', 'jspm', '--', 'install')
+chdir('src', 'go-client', 'ii-1')
+execSync('go', 'build')
