@@ -3,17 +3,15 @@ import fs from 'fs'
 import http from 'http'
 import path from 'path'
 import serveStatic from 'serve-static'
-import url from 'url'
 
 import config from '../config'
+import appRoot from '../util/appRoot'
 import log from '../util/log'
 import apiHandler from './apiHandler'
 import {reloadingHttpHandler} from './reloadingHttpHandler'
 
-const __filename = new url.URL(__moduleName).pathname
-const __dirname = path.dirname(__filename)
-const appRoot = path.join(__dirname, '..', '..')
-const srv = (...p) => serveStatic(path.join(appRoot, ...p), {index: false})
+const srvPath = (pp) => path.join(appRoot, ...pp)
+const srv = (...pp) => serveStatic(srvPath(pp), {index: false})
 
 const mainHandler = (req, res) => reloadingHttpHandler(req, res)
 
