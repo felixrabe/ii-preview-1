@@ -11,7 +11,17 @@
     "ii-1-daemon": "./daemon.js"
   },
   "dependencies": {
-    "jspm": "beta"
+    "connect": "^3.6.3",
+    "intercept-stdout": "^0.1.2",
+    "jspm": "beta",
+    "lodash": "^4.17.4",
+    "mkdirp": "^0.5.1",
+    "multipipe": "^1.0.2",
+    "nodemon": "^1.11.0",
+    "read-pkg-up": "^2.0.0",
+    "serve-static": "^1.12.4",
+    "systemjs": "^0.20.18",
+    "yargs": "^8.0.2"
   },
   "jspm": {
     "name": "ii",
