@@ -4,7 +4,7 @@ const main = async () => {
   const SystemJS = require('systemjs')
   await SystemJS.import('jspm.config.js')
   await SystemJS.import('systemjs.config.js')
-  (await SystemJS.import('ii-1/daemon/main'))()
+  ;(await SystemJS.import('ii-1/daemon/main'))()
 }
 
 main().catch(err => console.error(err))

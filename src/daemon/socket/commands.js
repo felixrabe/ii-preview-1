@@ -17,5 +17,4 @@ const commands = async (yargs) => (
   (await Promise.all(cmdPs)).reduce((yargs, m) => yargs.command(m), yargs)
 )
 
-export const __useDefault = commands
-export default __useDefault
+export default commands

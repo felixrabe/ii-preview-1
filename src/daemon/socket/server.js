@@ -3,6 +3,7 @@ import net from 'net'
 
 import config from '../config'
 import log from '../util/log'
+import makeStream from './makeStream'
 
 // eslint-disable-next-line no-unused-vars
 const errHandler = (socket) => (err) => {
@@ -15,7 +16,7 @@ const errHandler2 = (socket) => (err) => {
   socket.end()
 }
 
-const createSockServer = (makeStream) => {
+const createSockServer = () => {
   const server = new net.Server({allowHalfOpen: true})
 
   server.on('connection', (socket) => {
@@ -27,11 +28,11 @@ const createSockServer = (makeStream) => {
   })
 
   server.listen(config.paths.sock, () => {
-    log(`Listening on '${config.paths.sock}'`)
+    log(`Socket server listening on '${config.paths.sock}'`)
   })
 
   server.shutdown = () => {
-    log('Shutting down')
+    log('Socket server shutting down')
     return new Promise(r => server.close(() => {
       fs.unlinkSync(config.paths.pid)
       r()

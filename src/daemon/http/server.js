@@ -25,9 +25,18 @@ const createHttpServer = () => {
   app.use('/_n', srv('node_modules'))
   app.use(mainHandler)
 
-  return new http.Server(app).listen(config.httpPort, config.httpHost, () => {
-    log(`Listening on 'localhost:${config.httpPort}'`)
+  const server = new http.Server(app)
+
+  server.listen(config.httpPort, config.httpHost, () => {
+    log(`HTTP server listening on 'localhost:${config.httpPort}'`)
   })
+
+  server.shutdown = () => {
+    log('HTTP server shutting down')
+    return new Promise(r => server.close(r))
+  }
+
+  return server
 }
 
 export default createHttpServer
