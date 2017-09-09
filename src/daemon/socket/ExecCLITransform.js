@@ -18,7 +18,7 @@ const processArgs = async (obj, logArray) => {
   await Promise.all(awaitPs)
 }
 
-export default class ExecTransform extends stream.Transform {
+export default class ExecCLITransform extends stream.Transform {
   constructor() {
     super({writableObjectMode: true})
   }
