@@ -7,6 +7,6 @@
     "postinstall": "[[ -e ./node_modules/.bin/ii-1 ]] || (echo again... ; yarn --force)"
   },
   "workspaces": [
-    "workspaces/*"
+    "workspaces/*/*"
   ]
 }

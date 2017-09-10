@@ -1,0 +1,14 @@
+{
+  "name": "ii-1-daemon-server-sock",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "dependencies": {
+    "ii-1-daemon-config": "^0.1.0",
+    "ii-1-daemon-log": "^0.1.0",
+    "ii-1-util-streams": "^0.1.0",
+    "intercept-stdout": "^0.1.2",
+    "multipipe": "^1.0.2",
+    "yargs": "^8.0.2"
+  }
+}
