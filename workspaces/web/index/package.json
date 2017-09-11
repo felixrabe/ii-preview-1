@@ -5,5 +5,8 @@
   "license": "UNLICENSED",
   "dependencies": {
     "send": "^0.15.4"
+  },
+  "peerDependencies": {
+    "ii-1-ui-main": "^0.1.0"
   }
 }
