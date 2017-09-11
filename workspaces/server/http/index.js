@@ -15,7 +15,8 @@ module.exports = function createHttpServer() {
 
   app.use(blankFavicon)
   app.use(morgan('tiny'))
-  app.use('/_', httpReload('ii-1-ui-main/serveThis'))
+  app.use('/_n', httpReload('ii-1-web-node-modules'))
+  // app.use('/_', httpReload('ii-1-ui-main/serveThis'))
   app.use(httpReload('ii-1-web-index-with-mr/serveThis'))
 
   const server = new http.Server(app)
