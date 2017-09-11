@@ -8,7 +8,7 @@ const mkInfo = (hnd, version = global[globalVersionKey]) =>
   `...${hnd.slice(-25)} v${version}`
 
 exports = module.exports = function httpReload(hndFn) {
-  const hnd = hndFn()
+  const hnd = typeof hndFn === 'function' ? hndFn() : require.resolve(hndFn)
   return function reloadingHandlerWrapper(req, res, next) {
     return exports.origExports.reloadingHandler(hnd, req, res, next)
   }
