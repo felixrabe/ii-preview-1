@@ -4,6 +4,7 @@
   "private": true,
   "license": "UNLICENSED",
   "dependencies": {
+    "mr": "^17.0.7",
     "send": "^0.15.4"
   },
   "peerDependencies": {
