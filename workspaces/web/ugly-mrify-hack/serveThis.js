@@ -5,11 +5,11 @@ const serveStatic = require('serve-static')
 const nodeModulesRootPath = path.resolve(__dirname, '../../../node_modules')
 const rootStatic = serveStatic(nodeModulesRootPath, {index: false})
 
-module.exports = (modulePath) => {
+module.exports = (() => {
   const router = connect()
 
   router.use('/node_modules', rootStatic)
-  router.use(serveStatic(modulePath, {index: false}))
+  router.use(serveStatic(__dirname, {index: false}))
 
   return router
-}
+})()

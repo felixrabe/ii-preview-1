@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "license": "UNLICENSED",
+  "main": "./serveThis.js",
   "dependencies": {
     "connect": "^3.6.3",
     "serve-static": "^1.12.4"
