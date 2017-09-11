@@ -1,11 +1,10 @@
 {
-  "name": "ii-1-web-react-core",
+  "name": "ii-1-web-react-ui",
   "version": "0.1.0",
   "private": true,
   "license": "UNLICENSED",
   "dependencies": {
     "react": "^16.0.0-rc.2",
-    "react-dom": "^16.0.0-rc.2",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2"
   }

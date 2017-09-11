@@ -47,36 +47,110 @@ const resolvePath = ({base, baseName, exact, path}) => {
 }
 
 const registry = Object.create(null)
+const requireRegistry = Object.create(null)
 
-const _load = (path) => {
+const _load = (path, as) => {
+  if (as) requireRegistry[as] = path
   return path in registry ? registry[path] :
-    (registry[path] = {path, argsSeen: [], promises: []})
+    (registry[path] = {as, path, argsSeen: [], promises: []})
 }
 
-self.fetchText = async (path) => await (await fetch(path)).text()
+const _unload = ({as, path}) => {
+  if (as) delete requireRegistry[as]
+  delete registry[path]
+}
 
-self._loadRel = ({args, base, baseName, exact, path, transform}) => {
-  const rObj = _load(resolvePath({base, baseName, exact, path}))
+const errorShownFor = Object.create(null)
+
+// self.fetchText = async (path) => await (await fetch(path)).text()
+self.fetchText = async (path) => {
+  const res = await fetch(path)
+  if (res.status !== 200) {
+    if (!(path in errorShownFor)) {
+      errorShownFor[path] = true
+      const err = new Error(`fetch(${path}) responded with a status of ${res.status}`)
+      console.error(err)
+      // throw err
+    }
+  }
+  return await res.text()
+}
+
+self._loadRel = ({args, as, base, baseName, exact, path, transform}) => {
+  const rObj = _load(resolvePath({base, baseName, exact, path}), as)
   const i = rObj.argsSeen.indexOf(args)
   if (i !== -1) return rObj.promises[i]
   rObj.argsSeen.push(args)
   const p = (async () => {
-    const code = await self.fetchText(rObj.path)
-    return transform({...args, code, __moduleName: rObj.path})
+    let result
+    try {
+      const code = await self.fetchText(rObj.path)
+      result = transform({...args, code, __moduleName: rObj.path})
+    } catch (err) {
+      _unload(rObj)
+      // throw err
+      // console.error(err)
+      return Promise.reject(err)
+    }
+    // console.log('loadJS:_loadRel:', rObj.path)
+    // console.log(fetch(rObj.path))
+    // console.log('')
+    if (as) {
+      result.then(result => rObj.requirable = result)
+    }
+    return result
   })()
   rObj.promises.push(p)
   return p
 }
 
+const require = (m) => {
+  if (!(m in requireRegistry)) {
+    throw new Error(`Cannot find module '${m}' (use load({path, as}))`)
+  }
+  const rObj = registry[requireRegistry[m]]
+  return rObj.requirable
+}
+
+const loadFromModule = (evalArgs) => (path, args = defaultArgs) => {
+  if (typeof path === 'string') {  // load('/foo/bar', ...)
+    return loadFromModule(evalArgs)({path, args})
+  } else {  // load({path: '/foo/bar', ...})
+    return self._loadRel(
+      {args: defaultArgs, baseName: evalArgs.__moduleName, transform, ...path}
+    )
+  }
+}
+
+const resolveFromModule = (evalArgs) => (path) => typeof path === 'string'
+  ? resolveFromModule(evalArgs)({path: path})
+  : resolvePath({baseName: evalArgs.__moduleName, ...path})
+
+const loadNodeModule = (path, as) => {
+  return self._loadRel({
+    args: defaultArgs,
+    as: as || path,
+    base: '',
+    exact: true,
+    path: `${nodeModulePrefix}/${path}`,
+    transform,
+  })
+}
+
 const transform = async ({code, ...evalArgs}) => {
   code = `return (async () => {'use strict';\n${code}\n;})()`
-  evalArgs.load = (path, args = defaultArgs) => self._loadRel(
-    {args, baseName: evalArgs.__moduleName, path, transform}
-  )
+  evalArgs.load = loadFromModule(evalArgs)
+  // evalArgs.load = (path, args = defaultArgs) => self._loadRel(
+  //   {args, baseName: evalArgs.__moduleName, path, transform}
+  // )
   evalArgs.load.registry = registry
+  evalArgs.load.requireRegistry = requireRegistry
+  evalArgs.load.resolve = resolveFromModule(evalArgs)
+  evalArgs.loadNodeModule = loadNodeModule
   // minimal UMD support (https://github.com/ForbesLindesay/umd/blob/master/template.js)
   evalArgs.module = {exports: {}}
   evalArgs.exports = evalArgs.module.exports
+  evalArgs.require = require
   try {
     const fn = new Function(...Object.keys(evalArgs), code)
     let r = await fn(...Object.values(evalArgs))
@@ -92,15 +166,22 @@ const transform = async ({code, ...evalArgs}) => {
 
 self.load = (path, args = defaultArgs) => {
   if (typeof path === 'string') {  // load('/foo/bar', ...)
-    return self._loadRel({args, base: '', path, transform})
+    return self.load({path, args})
   } else {  // load({path: '/foo/bar', ...})
     return self._loadRel({args: defaultArgs, base: '', transform, ...path})
   }
 }
 self.load.registry = registry
+self.load.requireRegistry = requireRegistry
+self.load.resolve = (path) => typeof path === 'string'
+  ? self.load.resolve({path: path})
+  : resolvePath({base: '', ...path})
+self.load.require = require
+self.loadNodeModule = loadNodeModule
 
 const meSrc = [...document.getElementsByTagName('script')].pop().src
 const mePath = new URL(meSrc).pathname
+const nodeModulePrefix = mePath.split('/').slice(0, -2).join('/')
 const indexPath = self.location.pathname
 
 _load(indexPath)

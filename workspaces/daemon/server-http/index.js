@@ -16,7 +16,7 @@ module.exports = function createHttpServer() {
 
   app.use(blankFavicon)
   app.use('/_n', r('ii-1-web-serve-from-node-modules'))
-  app.use('/_w', r('ii-1-web-http-handler'))
+  // app.use('/_w', r('ii-1-web-http-handler'))  // reconsider for API usage
   app.use(r('ii-1-web-index'))
 
   const server = new http.Server(app)

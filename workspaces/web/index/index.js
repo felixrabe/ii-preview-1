@@ -11,6 +11,5 @@ module.exports = function webIndexHtmlHandler(req, res) {
   if (!(fs.existsSync(p) && fs.statSync(p).isFile())) {
     p = htmlPath
   }
-  // res.end(JSON.stringify(p))
   send(req, p).pipe(res)
 }

@@ -1,6 +1,6 @@
 const send = require('send')
 
-const sanitize = require('ii-1-url-sanitizer')
+const sanitize = require('ii-1-web-url-sanitizer')
 
 const urlToModulePath = (url) => {
   return require.resolve(sanitize(url))

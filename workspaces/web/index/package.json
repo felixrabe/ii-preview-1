@@ -6,9 +6,10 @@
   "dependencies": {
     "ii-1-web-base": "^0.1.0",
     "send": "^0.15.4",
-    "ii-1-web-url-sanitizer": "^0.1.0"
+    "ii-1-web-url-sanitizer": "^0.1.0",
+    "ii-1-web-react-core": "^0.1.0"
   },
   "peerDependencies": {
-    "ii-1-web-http-handler": "^0.1.0"
+    "ii-1-web-serve-from-node-modules": "^0.1.0"
   }
 }

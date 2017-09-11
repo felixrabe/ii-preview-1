@@ -23,7 +23,7 @@ module.exports = (match, rootPkgJson) => {
   workspacesRoot = path.join(path.dirname(rootPkgJson.loc), workspacesRoot)
   packages.forEach((pkg) => {
     const pkgPath = path.join(workspacesRoot, pkg)
-    const name = `${prefix}-${pkg}`
+    const name = `${prefix}-${pkg.replace(/\//g, '-')}`
 
     const manifest = {
       name,
