@@ -1,0 +1,10 @@
+{
+  "name": "ii-serve-ui",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "ii-ui": "^0.1.0",
+    "serve-static": "^1.12.4"
+  }
+}

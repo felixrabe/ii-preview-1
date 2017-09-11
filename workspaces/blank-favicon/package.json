@@ -1,0 +1,9 @@
+{
+  "name": "ii-blank-favicon",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "serve-favicon": "^2.4.3"
+  }
+}
