@@ -11,6 +11,7 @@ module.exports = (() => {
   const router = connect()
 
   router.use('/node_modules', rootStatic)
+  router.use('/node_modules/mr/node_modules', rootStatic)
   router.use(serveStatic(__dirname, {index: false}))
   router.use((req, res) => send(req, indexHtmlPath).pipe(res))
 
