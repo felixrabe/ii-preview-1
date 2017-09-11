@@ -1,6 +1,16 @@
+const connect = require('connect')
 const path = require('path')
 const send = require('send')
 
-const p = path.join(__dirname, 'index.html')
+const nodeModules = require('ii-1-web-node-modules')
 
-module.exports = (req, res) => send(req, p).pipe(res)
+const indexHtmlPath = path.join(__dirname, 'index.html')
+
+module.exports = (() => {
+  const route = connect()
+
+  route.use(nodeModules(__dirname))
+  route.use((req, res) => send(req, indexHtmlPath).pipe(res))
+
+  return route
+})()

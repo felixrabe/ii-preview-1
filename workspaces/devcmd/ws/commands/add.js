@@ -4,6 +4,7 @@ const path = require('path')
 
 const execSync = require('../utils/execSync')
 const PACKAGE_JSON = require('../utils/pkgJson')
+const yarnOpts = require('../utils/yarnOpts')
 
 const mapWorkspaces = (rootPkgJson) => {
   const map = Object.create(null)
@@ -34,8 +35,6 @@ const addDependency = (map, manifest, pkg, auxDeps) => {
   dependencies = {...dependencies, [pkg]: `^${version}`}
   return {...manifest, dependencies}
 }
-
-const yarnOpts = ['--silent', '--no-progress', '--ignore-engines']
 
 module.exports = (match, rootPkgJson) => {
   const {ws, packages} = match

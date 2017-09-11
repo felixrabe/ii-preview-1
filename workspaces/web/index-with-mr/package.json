@@ -4,6 +4,8 @@
   "private": true,
   "license": "UNLICENSED",
   "dependencies": {
+    "connect": "^3.6.3",
+    "ii-1-web-node-modules": "^0.1.0",
     "mr": "^17.0.7",
     "send": "^0.15.4"
   }

@@ -3,15 +3,16 @@
 const path = require('path')
 
 const add = require('./commands/add')
+const new_ = require('./commands/new')
 const execSync = require('./utils/execSync')
 const findToplevelPkgJson = require('./utils/findToplevelPkgJson')
-const new_ = require('./commands/new')
+const yarnOpts = require('./utils/yarnOpts')
 
 const run = (cmd, match) => {
   const rootPkgJson = findToplevelPkgJson()
   const r = cmd(match, rootPkgJson)
   process.chdir(path.dirname(rootPkgJson.loc))
-  execSync('yarn', 'install', '--silent', '--no-progress')
+  execSync('yarn', 'install', ...yarnOpts)
   return r
 }
 
