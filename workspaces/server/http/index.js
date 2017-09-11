@@ -1,5 +1,6 @@
 const connect = require('connect')
 const http = require('http')
+const morgan = require('morgan')
 
 const blankFavicon = require('ii-1-server-blank-favicon')
 const httpReload = require('ii-1-server-http-reload')
@@ -13,9 +14,10 @@ module.exports = function createHttpServer() {
   const app = connect()
 
   app.use(blankFavicon)
+  app.use(morgan('tiny'))
   app.use('/_/require1k.js', require('ii-1-web-require1k/serveThis'))
   app.use('/_', httpReload('ii-1-ui-main/serveThis'))
-  app.use(httpReload('ii-1-web-index/serveThis'))
+  app.use(httpReload('ii-1-web-index-with-require1k/serveThis'))
 
   const server = new http.Server(app)
   server.keepAliveTimeout = 1.5 * 1000

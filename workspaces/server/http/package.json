@@ -5,9 +5,10 @@
   "license": "UNLICENSED",
   "dependencies": {
     "connect": "^3.6.3",
-    "ii-1-server-http-reload": "^0.1.0",
     "ii-1-server-blank-favicon": "^0.1.0",
-    "ii-1-web-index": "^0.1.0",
-    "ii-1-web-require1k": "^0.1.0"
+    "ii-1-server-http-reload": "^0.1.0",
+    "ii-1-web-index-with-mr": "^0.1.0",
+    "ii-1-web-mr": "^0.1.0",
+    "morgan": "^1.8.2"
   }
 }
