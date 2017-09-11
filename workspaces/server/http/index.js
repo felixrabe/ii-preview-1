@@ -16,8 +16,11 @@ module.exports = function createHttpServer() {
   app.use(blankFavicon)
   app.use(morgan('tiny'))
 
-  app.use('/_ui', httpReload('ii-1-ui-main/serveThis'))
-  app.use(httpReload('ii-1-web-index/serveThis'))
+  app.use(httpReload('ii-1-web-ugly-mrify-hack'))
+
+  // app.use('/_ui', httpReload('ii-1-ui-main/serveThis'))
+  // app.use('/_ui/node_modules/mr', httpReload('ii-1-ui-main/serveThis'))
+  // app.use(httpReload('ii-1-web-index/serveThis'))
 
   // app.use('/_', httpReload('ii-1-ui-main/serveThis'))
   // app.use(httpReload('ii-1-web-index-with-mr/serveThis'))
