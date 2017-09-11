@@ -28,10 +28,3 @@ module.exports = async (req, res, next) => {
     res.end(err.stack)
   }
 }
-
-// module.exports = serveStatic(uiPath)
-
-// module.exports = (req, res, next) => {
-//   res.setHeader('Content-Type', 'text/javascript; charset="utf-8"')
-//   res.end("document.getElementById('root').textContent = 'transpiled code greets you'")
-// }

@@ -2,5 +2,9 @@
   "name": "ii-transpiler",
   "version": "0.1.0",
   "license": "UNLICENSED",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "ii-transpiler-jsx": "^0.1.0",
+    "ii-transpiler-esm-module-specifiers": "^0.1.0"
+  }
 }
