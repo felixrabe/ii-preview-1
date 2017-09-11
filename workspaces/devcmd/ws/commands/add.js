@@ -35,6 +35,8 @@ const addDependency = (map, manifest, pkg, auxDeps) => {
   return {...manifest, dependencies}
 }
 
+const yarnOpts = ['--silent', '--no-progress', '--ignore-engines']
+
 module.exports = (match, rootPkgJson) => {
   const {ws, packages} = match
   const map = mapWorkspaces(rootPkgJson)
@@ -50,7 +52,7 @@ module.exports = (match, rootPkgJson) => {
   fs.writeFileSync(loc, JSON.stringify(manifest, null, 2) + '\n', 'utf-8')
   if (auxDeps.length) {
     process.chdir(path.dirname(loc))
-    execSync('yarn', 'add', '--silent', '--no-progress', ...auxDeps)
+    execSync('yarn', 'add', ...yarnOpts, ...auxDeps)
   }
 }
 
