@@ -1,8 +1,3 @@
-const connect = require('connect')
-const path = require('path')
-const serveStatic = require('serve-static')
+const nodeModules = require('ii-1-server-http-node-modules')
 
-const nodeModulesPath = path.resolve(__dirname, '../../../node_modules')
-const route = module.exports = connect()
-route.use('/node_modules', serveStatic(nodeModulesPath, {index: false}))
-route.use(serveStatic(__dirname, {index: false}))
+module.exports = nodeModules(__dirname)

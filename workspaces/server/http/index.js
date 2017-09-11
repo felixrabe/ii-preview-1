@@ -15,8 +15,12 @@ module.exports = function createHttpServer() {
 
   app.use(blankFavicon)
   app.use(morgan('tiny'))
+
+  app.use('/_ui', httpReload('ii-1-ui-main/serveThis'))
+  app.use(httpReload('ii-1-web-index/serveThis'))
+
   // app.use('/_', httpReload('ii-1-ui-main/serveThis'))
-  app.use(httpReload('ii-1-web-index-with-mr/serveThis'))
+  // app.use(httpReload('ii-1-web-index-with-mr/serveThis'))
 
   const server = new http.Server(app)
   server.keepAliveTimeout = 1.5 * 1000

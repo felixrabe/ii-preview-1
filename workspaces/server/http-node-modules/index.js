@@ -9,7 +9,6 @@ module.exports = (modulePath) => {
   const route = connect()
 
   route.use('/node_modules', rootStatic)
-  console.log(modulePath)
   route.use(serveStatic(modulePath, {index: false}))
 
   return route
