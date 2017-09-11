@@ -4,6 +4,6 @@
   "private": true,
   "license": "UNLICENSED",
   "dependencies": {
-    "ii-1-server-http-node-modules": "^3.6.3"
+    "ii-1-server-http-node-modules": "^0.1.0"
   }
 }
