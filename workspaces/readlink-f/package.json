@@ -1,0 +1,9 @@
+{
+  "name": "ii-readlink-f",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "bin": {
+    "readlink-f": "./readlink-f.sh"
+  }
+}
