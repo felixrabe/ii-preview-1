@@ -1,0 +1,12 @@
+{
+  "name": "ii-cli-client-go",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "preinstall": "go build ./ii-cli-client.go"
+  },
+  "bin": {
+    "ii-cli-client": "./ii-cli-client"
+  }
+}
