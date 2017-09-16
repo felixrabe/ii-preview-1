@@ -28,11 +28,9 @@ const loadJS = (sandbox, mod, modPath, modCache) => {
     displayErrors: true,
   })
 
-  const deepRequire = createDeepRequire(sandbox, mod, modCache)
-
   const modDir = path.dirname(modPath)
 
-  result = modCompiled.call(mod.exports, mod.exports, deepRequire,
+  result = modCompiled.call(mod.exports, mod.exports, mod.require,
     mod, modPath, modDir)
 
   return result
@@ -40,8 +38,6 @@ const loadJS = (sandbox, mod, modPath, modCache) => {
 
 const tryLoad = (sandbox, mod, modPath, modCache) => {
   assert(!mod.loaded)
-  mod.filename = modPath
-  mod.paths = Module._nodeModulePaths(path.dirname(modPath))
 
   let extension = path.extname(modPath) || '.js'
   if (!Module._extensions[extension]) extension = '.js'
@@ -59,13 +55,16 @@ const tryLoad = (sandbox, mod, modPath, modCache) => {
 
 const loadModule = (sandbox, childPath, parentModule, modCache) => {
   childPath = Module._resolveFilename(childPath, parentModule)
+  if (childPath.indexOf('/') < 0) {  // builtin
+    return require(childPath)
+  }
   const cachedChildModule = Module._cache[childPath]
   if (cachedChildModule) {
     updateChildren(parentModule, cachedChildModule, true)
     return cachedChildModule.exports
   }
 
-  const childModule = new Module(childPath, parentModule)
+  const childModule = createDeepRequire.createModule(childPath, parentModule)
   childModule.require = createDeepRequire(sandbox, childModule, modCache)
   Module._cache[childPath] = childModule
   let threw = true
@@ -78,8 +77,9 @@ const loadModule = (sandbox, childPath, parentModule, modCache) => {
   return childModule.exports
 }
 
-const createDeepRequire = module.exports = (sandbox, parentModule, modCache = false) => {
+const createDeepRequire = module.exports = (sandbox, parentModule, modCache) => {
   sandbox = vm.createContext(sandbox)
+  modCache = modCache || Module._cache
 
   const deepRequire = (childPath) => {
     const cache = Module._cache
@@ -98,7 +98,14 @@ const createDeepRequire = module.exports = (sandbox, parentModule, modCache = fa
 
   deepRequire.main = process.mainModule
   deepRequire.extensions = Module._extensions
-  deepRequire.cache = Module._cache
+  deepRequire.cache = modCache
 
   return deepRequire
+}
+
+createDeepRequire.createModule = (modPath, parentModule) => {
+  const mod = new Module(modPath, parentModule)
+  mod.filename = modPath
+  mod.paths = Module._nodeModulePaths(path.dirname(modPath))
+  return mod
 }

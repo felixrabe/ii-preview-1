@@ -4,11 +4,10 @@
   "private": true,
   "license": "UNLICENSED",
   "bin": {
-    "cli-server": "./bin/server.js",
+    "ii-cli-server": "./bin/server.js",
     "fastnode": "./bin/fastnode.sh"
   },
   "dependencies": {
-    "ii-readlink-f": "0.1.0",
     "ii-streams": "0.1.0",
     "multipipe": "^1.0.2"
   },

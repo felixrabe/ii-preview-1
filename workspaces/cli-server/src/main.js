@@ -1,12 +1,31 @@
-const ChildSupervisor = require('./ChildSupervisor')
+const net = require('net')
+const path = require('path')
+
+const handleConnection = require('./handleConnection')
 const onShutdown = require('./onShutdown')
 const parseArguments = require('./parseArguments')
+const removeSocket = require('./removeSocket')
+
+const netOpts = { allowHalfOpen: true }
 
 module.exports = () => {
-  const {scriptPath, sockPath} = parseArguments()
-  const childSupervisor = new ChildSupervisor(scriptPath, sockPath)
+  const {scriptPath, sockPath, opts} = parseArguments()
+  if (opts.force) removeSocket(sockPath)
+
+  const server = net.createServer(netOpts, handleConnection(scriptPath))
+
+  server.listen(sockPath, () => {
+    const sockPath_ = path.basename(sockPath)
+    console.log('main.js:', `Started '.../${sockPath_}'.`)
+  })
+
+  const closePromise = new Promise(r => server.on('close', r))
 
   onShutdown(async () => {
-    await childSupervisor.kill()
+    console.log('main.js:', 'Stopping...')
+    server.close()
+    await closePromise
+    removeSocket(sockPath)
+    console.log('main.js:', 'Stopped.')
   })
 }

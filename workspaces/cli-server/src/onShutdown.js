@@ -1,19 +1,18 @@
-const exitProcess = () => process.exit()
-
-const killProcess = (signal) => () => process.kill(process.pid, signal)
-
 module.exports = (shutdown) => {
-  let shutdownCalled = false
+  let down = false
 
-  const createSigHandler = (name, quit = exitProcess) => () => {
-    console.log('onShutdown.js:', name)
-    if (!shutdownCalled) shutdown().then(quit)
-    else quit()
-    shutdownCalled = true
+  const createSigHandler = (sig) => {
+    const quit = () => process.kill(process.pid, sig)
+    process.once(sig, () => {
+      console.log('onShutdown.js:', `sig: ${sig} - down: ${down}`)
+      if (!down) shutdown().then(quit)
+      else quit()
+      down = true
+    })
   }
 
-  process.on('SIGINT', createSigHandler('SIGINT'))
-  process.on('SIGTERM', createSigHandler('SIGTERM'))
+  createSigHandler('SIGINT')
+  createSigHandler('SIGTERM')
   // for nodemon
-  process.once('SIGUSR2', createSigHandler('SIGUSR2', killProcess('SIGUSR2')))
+  createSigHandler('SIGUSR2')
 }

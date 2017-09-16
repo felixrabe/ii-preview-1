@@ -1,25 +1,25 @@
+const fs = require('fs')
 const path = require('path')
 
-const muteStdout = require('./muteStdout')
+const scriptPathMissingError = new Error('Script path argument required.')
+const doesNotExist = (p) => new Error(`No such file: '${p}'.`)
 
 module.exports = () => {
-  if (process.argv.length < 3) throw new Error('Script path argument required.')
+  const args = []
+  const opts = {}
+  process.argv.slice(2).forEach(arg => {
+    if (arg.startsWith('--')) {
+      opts[arg.slice(2)] = true
+    } else {
+      args.push(arg)
+    }
+  })
 
-  let silent = false
-  let scriptPath = process.argv[2]
-  let args = process.argv.slice(3)
-  if (scriptPath === '--silent') {
-    silent = true
-    scriptPath = process.argv[3]
-    args = process.argv.slice(4)
-  }
+  if (args.length < 1) throw scriptPathMissingError
+  const scriptPath = path.resolve(args.shift())
+  if (!fs.existsSync(scriptPath)) throw doesNotExist(scriptPath)
 
-  scriptPath = path.resolve(scriptPath)
-  const sockPath = path.resolve(scriptPath.replace(/\.js$/, '') + '.sock')
+  const sockPath = scriptPath.replace(/\.js$/, '') + '.sock'
 
-  if (silent) {
-    muteStdout()
-  }
-
-  return {args, scriptPath, sockPath}
+  return {scriptPath, sockPath, opts, args}
 }
