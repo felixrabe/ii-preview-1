@@ -1,0 +1,16 @@
+{
+  "name": "ii-http-server",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "bin": {
+    "ii-http-server": "./bin/server.js"
+  },
+  "dependencies": {
+    "connect": "^3.6.3",
+    "ii-blank-favicon": "^0.1.0",
+    "ii-on-shutdown": "^0.1.0",
+    "ii-wrap-main": "^0.1.0",
+    "morgan": "^1.8.2"
+  }
+}
