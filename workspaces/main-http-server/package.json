@@ -10,7 +10,6 @@
     "babel-core": "^7.0.0-beta.0",
     "babel-plugin-transform-react-jsx": "^7.0.0-beta.0",
     "connect": "^3.6.3",
-    "glob": "^7.1.2",
     "ii-http-server": "^0.1.0",
     "ii-module-locator": "^0.1.0",
     "ii-module-rewriter": "^0.1.0",
