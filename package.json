@@ -5,5 +5,8 @@
   "private": true,
   "workspaces": [
     "workspaces/*"
-  ]
+  ],
+  "resolutions": {
+    "mime": "1.4.0"
+  }
 }
