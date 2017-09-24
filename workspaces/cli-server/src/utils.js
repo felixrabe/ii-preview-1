@@ -9,6 +9,4 @@ module.exports = {
   flushRequireCache: () => Object.keys(require.cache).forEach(k => {
     delete require.cache[k]
   }),
-
-  stripShebang: (s) => s.replace(/^#![^\n]*\n/, '\n'),
 }

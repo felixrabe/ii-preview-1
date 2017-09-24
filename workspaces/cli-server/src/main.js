@@ -1,8 +1,9 @@
 const net = require('net')
 const path = require('path')
 
+const onShutdown = require('ii-on-shutdown')
+
 const handleConnection = require('./handleConnection')
-const onShutdown = require('./onShutdown')
 const parseArguments = require('./parseArguments')
 const removeSocket = require('./removeSocket')
 

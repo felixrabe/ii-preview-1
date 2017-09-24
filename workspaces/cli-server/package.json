@@ -7,7 +7,10 @@
     "ii-cli-server": "./bin/server.js"
   },
   "dependencies": {
-    "ii-streams": "0.1.0",
+    "ii-streams": "^0.1.0",
+    "ii-wrap-main": "^0.1.0",
+    "ii-create-deep-require": "^0.1.0",
+    "ii-on-shutdown": "^0.1.0",
     "multipipe": "^1.0.2"
   },
   "devDependencies": {

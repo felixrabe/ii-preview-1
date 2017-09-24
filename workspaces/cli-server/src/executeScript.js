@@ -1,4 +1,5 @@
-const createDeepRequire = require('./createDeepRequire')
+const createDeepRequire = require('ii-create-deep-require')
+
 const { cloneAssign } = require('./utils')
 
 module.exports = async (scriptPath, args, options) => {
