@@ -4,6 +4,9 @@
   "license": "UNLICENSED",
   "private": true,
   "workspaces": [
+    "workspaces/cli/*",
+    "workspaces/http/*",
+    "workspaces/utils/*",
     "workspaces/*"
   ],
   "resolutions": {
