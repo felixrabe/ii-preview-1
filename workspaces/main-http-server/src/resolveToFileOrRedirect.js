@@ -1,17 +1,42 @@
 const fs = require('fs')
-const glob = require('glob')
+const parseUrl = require('parseurl')
 const path = require('path')
+const querystring = require('querystring')
 
-module.exports = (parentMod) => {
-  require(parentMod)
-  parentMod = require.cache[require.resolve(parentMod)]
+const uiMod = require('../ui/_thisMod')
+const resolver = resolverFactory(uiMod)
 
+const resolveCache = Object.create(null)
+
+module.exports = (req) => {
+  const {modName} = parseReq(req)
+  const resolved = tryResolve(modName, uiMod)
+  return resolved
+}
+
+const parseReq = (req) => {
+  const parsed = parseUrl(req)
+  const modName = parsed.pathname.slice(1)
+  return {modName}
+}
+
+const tryResolve = (modName, parentMod) => {
+  if (modName in resolveCache) return resolveCache[modName]
+  const result = modName + '/foo'
+  resolveCache[modName] = result
+  return result
+}
+
+
+
+const resolverFactory = (parentMod) => {
   const parentModDir = path.dirname(parentMod.filename)
 
   const searchDirs = [...Array(3)].reduce((searchDirs, _, i) => {
     const p = path.resolve(parentModDir, ...[...Array(i)].map(() => '..'))
-    const s = glob.sync('node_modules', {cwd: p})
-    return searchDirs.concat(s.map(d => path.resolve(p, d)))
+    // const s = glob.sync('node_modules', {cwd: p})
+    // return searchDirs.concat(s.map(d => path.resolve(p, d)))
+    return searchDirs.concat()
   }, [])
 
   return (modName) => {

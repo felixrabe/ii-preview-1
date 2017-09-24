@@ -1,45 +1,39 @@
-const babel = require('babel-core')
-const fs = require('fs')
-const parseUrl = require('parseurl')
-const path = require('path')
-const querystring = require('querystring')
-const util = require('util')
+const moduleLocator = require('ii-module-locator')
 
-const importRewriter = [require('ii-module-rewriter'), {
-  replaceFunc(originalPath, callingFileName, options) {
-    if (originalPath.indexOf('/') !== -1) return originalPath
-    return `/_ii/${originalPath}`
-  }
-}]
-
-const babelOpts = {
-  plugins: [
-    'transform-react-jsx',
-    importRewriter,
-  ],
-}
-
-const babelTransformFile = util.promisify(babel.transformFile)
-const jstr = o => JSON.stringify(o, null, 2)
 const uiMod = require('../ui/_thisMod')
+const babel = require('./babel')
 
-const tryResolve = (modName, parentMod) => {
-
-}
+const loc = moduleLocator(uiMod)
 
 module.exports = async (req, res, next) => {
-  const parsed = parseUrl(req)
-  const modName = parsed.pathname.slice(1)
 
-  tryResolve(modName, uiMod)
 
-  // const filePath = path.resolve(__dirname, '..', 'ui', 'index.mjs')
+
+
+
+
+
+
+
+
+
+
+
+  const resolved = resolveToFileOrRedirect(req)
+
+  if (resolved.indexOf('/') === -1) {
+    // res.writeHead(302, {Location: 'foo/bar/baz'})
+    return res.end()
+  }
+
+  return res.end(jstr({
+    resolved,
+  }))
 
   try {
-    const {code} = await babelTransformFile(filePath, babelOpts)
+    const code = await babel(filePath)
 
     res.writeHead(200, {'Content-Type': 'application/javascript'})
-    // return res.end(jstr({modName, filePath}))
     return res.end(code)
   } catch (err) {
     res.writeHead(500, {'Content-Type': 'text/plain; charset=utf-8'})
