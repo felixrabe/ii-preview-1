@@ -13,6 +13,7 @@
     "ii-http-server": "^0.1.0",
     "ii-module-locator": "^0.1.0",
     "ii-reloading": "^0.1.0",
+    "ii-stdlib": "^0.1.0",
     "ii-wrap-main": "^0.1.0",
     "parseurl": "^1.3.2",
     "serve-static": "^1.12.4"
