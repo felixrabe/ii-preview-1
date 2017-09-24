@@ -26,7 +26,20 @@ module.exports = (parentMod) => {
 
   const resolveModule = (modName) => {
     const pkgJsonPath = locate(path.join(modName, 'package.json'))
-    if (!pkgJsonPath) return {filePath: undefined}
+    if (!pkgJsonPath) {
+      let n, p
+
+      let modType = 'cjs'
+      if (modName.indexOf('/es/') !== -1 || modName.indexOf('-es/') !== -1)
+        modType = 'es'
+
+      if (p = locate(n = modName))
+        return buildRedirect(n, '', modType)
+      if (p = locate(n = modName + '.js'))
+        return buildRedirect(n, '', modType)
+
+      return {filePath: undefined}
+    }
 
     const pkgJsonDir = path.dirname(pkgJsonPath)
     let pkgJson = {}
@@ -60,10 +73,6 @@ module.exports = (parentMod) => {
     return buildRedirect(path.join(modName, modPath), modName, modType)
   }
 
-  const locateFile = (modPath) => {
-    return locate(modPath)
-  }
-
   return (req) => {
     const parsed = parseUrl(req)
     const query = querystring.parse(parsed.query)
@@ -72,15 +81,15 @@ module.exports = (parentMod) => {
 
     let modPath = parsed.pathname.slice(1)
 
-    if (!modType) {
+    if (!modType) {  // redirect
       if (modPath === '') modPath = 'index.mjs'
       if (fs.existsSync(path.join(parentModDir, modPath)))
         return buildRedirect(modPath, '', 'es')
       return resolveModule(modPath)
-    } else {
+    } else {  // locate
       let filePath = path.join(parentModDir, modPath)
       if (fs.existsSync(filePath)) return {filePath, modName, modType}
-      return {filePath: locateFile(modPath), modName, modType}
+      return {filePath: locate(modPath), modName, modType}
     }
   }
 }

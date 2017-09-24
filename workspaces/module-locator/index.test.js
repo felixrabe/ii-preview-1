@@ -25,6 +25,9 @@ const testModule = (modName, urlPath, relFilePath, modType) => {
 testModule('jest', '/jest/build/jest.js?n=jest&t=cjs',
   'jest/build/jest.js', 'cjs')
 
+testWithUrl('jest pluralize', '/jest-cli/build/pluralize',
+  {redirect: '/jest-cli/build/pluralize.js?n=&t=cjs'})
+
 testModule('parseurl', '/parseurl/index.js?n=parseurl&t=cjs',
   'parseurl/index.js', 'cjs')
 
@@ -33,6 +36,11 @@ testModule('react', '/react/umd/react.development.js?n=react&t=amd',
 
 testModule('react-redux', '/react-redux/es/index.js?n=react-redux&t=es',
   'react-redux/es/index.js', 'es')
+
+testWithUrl('redirects react-redux Provider',
+  '/react-redux/es/components/Provider',
+  {redirect: '/react-redux/es/components/Provider.js?n=&t=es'},
+)
 
 testWithUrl('redirects index', '/', {redirect: '/index.mjs?n=&t=es'})
 testWithUrl('locates index', '/index.mjs?n=&t=es', {
@@ -55,3 +63,6 @@ testWithUrl('locates /bar/baz.mjs', '/bar/baz.mjs?n=&t=es', {
   modName: '',
   modType: 'es',
 })
+
+testWithUrl('lodash-es/isPlainObject', '/lodash-es/isPlainObject',
+  {redirect: '/lodash-es/isPlainObject.js?n=&t=es'})
