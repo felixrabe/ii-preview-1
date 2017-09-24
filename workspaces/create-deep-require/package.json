@@ -1,0 +1,9 @@
+{
+  "name": "ii-create-deep-require",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "dependencies": {
+    "ii-strip-shebang": "^0.1.0"
+  }
+}
