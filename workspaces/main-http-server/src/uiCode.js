@@ -4,6 +4,7 @@ const moduleLocator = require('ii-module-locator')
 
 const uiMod = require('../ui/_thisMod')
 const babel = require('./babel')
+const transform = require('./transform')
 
 const jstr = o => JSON.stringify(o, null, 2)
 const loc = moduleLocator(uiMod)
@@ -25,37 +26,15 @@ module.exports = async (req, res, next) => {
       return res.end()
     }
 
-    if (!filePath) {
+    if (!filePath) {  // not found
       return next()
     }
 
-    const code = await babel(filePath)
+    let code = await babel(filePath)
+    code = transform(code, modName, modType)
     res.writeHead(200, {'Content-Type': 'application/javascript'})
     return res.end(code)
   } catch (err) {
     return next(err)
   }
 }
-
-// module.exports = async (req, res, next) => {
-//   let filePath, modName, modType, redirect
-//   try {
-//     ({filePath, modName, modType, redirect} = loc(req))
-//   } catch (err) {
-//     return next(err)
-//   }
-
-//   if (redirect) {
-//     res.writeHead(302, {Location: getRoute(req) + redirect})
-//     return res.end()
-//   }
-
-//   let code
-//   try {
-//     code = await babel(filePath)
-//   } catch (err) {
-//     return next(err)
-//   }
-//   res.writeHead(200, {'Content-Type': 'application/javascript'})
-//   return res.end(code)
-// }

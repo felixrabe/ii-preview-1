@@ -3,18 +3,17 @@ const util = require('util')
 
 const babelTransformFile = util.promisify(babel.transformFile)
 
-const importRewriter = [require('ii-module-rewriter'), {
-  replaceFunc(originalPath, callingFileName, options) {
-    if (originalPath.indexOf('/') !== -1) return originalPath
-    return `/_ii/${originalPath}`
-  }
-}]
+const sourceRewriter = (source, filename) => {
+  if (source.startsWith('.')) return source
+  // if (source.indexOf('/') !== -1) return source
+  return `/_ii/${source}`
+}
 
 const babelOpts = {
   plugins: [
     'transform-react-jsx',
-    importRewriter,
   ],
+  resolveModuleSource: sourceRewriter,
 }
 
 module.exports = async (filePath) => {
