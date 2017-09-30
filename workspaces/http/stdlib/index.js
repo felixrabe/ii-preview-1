@@ -2,37 +2,15 @@ const fs = require('fs')
 const mkdirp = require('mkdirp')
 const path = require('path')
 const rimraf = require('rimraf')
-const rollup = require('rollup')
 const serveStatic = require('serve-static')
 const touch = require('touch')
 
-const rpCommonjs = require('rollup-plugin-commonjs')
-const rpNodeResolve = require('rollup-plugin-node-resolve')
-const rpReplace = require('rollup-plugin-replace')
-const rpVirtual = require('rollup-plugin-virtual')
-
 const md5 = require('./md5')
+const rollFactory = require('./rollFactory')
 
 const top = __dirname
 const stdlib = path.resolve(top, 'build')
-
-const rpImportAlias = (opts) => {
-  if (typeof opts !== 'object') return {}
-
-  return {
-    resolveId(importee, importer) {
-      let found = undefined
-      Object.keys(opts).find((key) => {
-        if (importee !== key) return false
-        const p = opts[key]
-        if (!fs.existsSync(p)) return false
-        found = p
-        return true
-      })
-      return found
-    }
-  }
-}
+const roll = rollFactory(stdlib)
 
 const main = async () => {
   const hash = md5(fs.readFileSync(__filename, 'utf-8'))
@@ -41,10 +19,11 @@ const main = async () => {
 
   rimraf.sync(stdlib)
   mkdirp.sync(stdlib)
-  touch.sync(hashFile)
   process.chdir(stdlib)
 
-  await roll('d3')
+  await roll('d3', {
+    virtual: `export * from 'd3'\n`,
+  })
 
   await roll('react', {
     modPath: 'react/umd/react.development.js',
@@ -79,53 +58,8 @@ const main = async () => {
   await roll('redux', {
     virtual: `export * from 'redux'\n`,
   })
-}
 
-const roll = async (modName, {external, importAlias, modPath, namedExports, virtual, virtualAlias} = {}) => {
-  if (!modPath) modPath = modName
-
-  if (namedExports) {
-    namedExports = {[modPath]: namedExports}
-  }
-
-  const filename = `${modName}.mjs`
-  console.log(`Compiling ${filename}...`)
-
-  virtualAlias = virtualAlias || {}
-  virtualAlias[filename] = modPath
-
-  if (typeof virtual === 'string')
-    virtual = {[filename]: virtual}
-
-  const virt = Object.assign(
-    Object.keys(virtualAlias).reduce((virt, k) => {
-      const m = JSON.stringify(virtualAlias[k])
-      virt[k] = `export * from ${m}\nexport {default} from ${m}\n`
-      return virt
-    }, Object.create(null)),
-    virtual || {},
-  )
-
-  const bundle = await rollup.rollup({
-    input: filename,
-    plugins: [
-      rpReplace({ values: {
-        'process.env.NODE_ENV': JSON.stringify('development'),
-      }}),
-      rpVirtual(virt),
-      rpImportAlias(importAlias),
-      rpNodeResolve(),
-      rpCommonjs({
-        namedExports,
-      }),
-    ],
-    external,
-  })
-
-  await bundle.write({
-    file: path.resolve(stdlib, filename),
-    format: 'es',
-  })
+  touch.sync(hashFile)
 }
 
 const mainDone = main()
