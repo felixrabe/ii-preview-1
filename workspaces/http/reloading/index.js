@@ -15,6 +15,7 @@ module.exports = (cb) => {
       try {
         handler = cb()
       } catch (err) {
+        console.error(err)
         handler = (req, res, next) => {
           return next(err)
         }
