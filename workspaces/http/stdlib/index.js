@@ -44,6 +44,8 @@ const main = async () => {
   touch.sync(hashFile)
   process.chdir(stdlib)
 
+  await roll('d3')
+
   await roll('react', {
     modPath: 'react/umd/react.development.js',
     namedExports: Object.keys(require('react')),
